@@ -18,7 +18,7 @@ class CreateRespuestaJugadorsTable extends Migration
             $table->tinyInteger('correcta');
             $table->unsignedBigInteger('jugador_id');
             $table->foreign('jugador_id')->references('id')->on('jugadors');//foreign_key
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -21,7 +21,7 @@ class CreateRespuestasTable extends Migration
             $table->string('color');
             $table->unsignedBigInteger('pregunta_id');
             $table->foreign('pregunta_id')->references('id')->on('preguntas');//foreign_key
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

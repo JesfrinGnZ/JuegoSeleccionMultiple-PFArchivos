@@ -21,7 +21,7 @@ class CreateCuestionariosTable extends Migration
             $table->unsignedBigInteger('administrador_id');
             $table->foreign('administrador_id')->references('id')->on('administradors');//foreign_key
             //$table->string(cod_juego);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

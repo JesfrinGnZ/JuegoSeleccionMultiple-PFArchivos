@@ -18,7 +18,7 @@ class CreateJugadorsTable extends Migration
             $table->string('nickname');
             $table->unsignedBigInteger('cuestionario_realizado_id');
             $table->foreign('cuestionario_realizado_id')->references('id')->on('cuestionario_realizados');//foreign_key
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

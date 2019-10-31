@@ -18,7 +18,7 @@ class CreateCuestionarioRealizadosTable extends Migration
             $table->string('codigo_generado');
             $table->unsignedBigInteger('cuestionario_id');
             $table->foreign('cuestionario_id')->references('id')->on('cuestionarios');//foreign_key
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

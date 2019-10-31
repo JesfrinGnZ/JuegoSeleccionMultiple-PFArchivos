@@ -8,31 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>App Cuestionarios</title>
+    <title>@yield('name')</title>
   </head>
   <body>
-    <div class="container my-4">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#Id</th>
-            <th scope="col">User</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Password</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($admins as $item)
-            <tr>
-              <th scope="row">{{$item->id}}</th>
-              <td>{{$item->user}}</td>
-              <td>{{$item->nombre}}</td>
-              <td>{{$item->password}}</td>
-            </tr>
-          @endforeach
-        </tbody>
-      </table>
+    <div class="container">
+      @yield('seccion') <!--seccion dinamica con yield -->
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

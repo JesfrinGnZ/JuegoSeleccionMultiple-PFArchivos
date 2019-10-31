@@ -20,7 +20,7 @@ class CreatePreguntasTable extends Migration
             $table->bigInteger('tiempo');
             $table->unsignedBigInteger('cuestionario_id');
             $table->foreign('cuestionario_id')->references('id')->on('cuestionarios');//foreign_key
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 
