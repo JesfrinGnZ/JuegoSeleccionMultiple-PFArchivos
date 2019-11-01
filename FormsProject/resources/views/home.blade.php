@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Hemos entrado a la aplicación Athziri!
                 </div>
             </div>
         </div>
