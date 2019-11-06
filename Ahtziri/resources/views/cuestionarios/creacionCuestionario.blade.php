@@ -3,7 +3,8 @@
 
 @section('content')
 
-<form class="form-group" action="cuestionario" method="POST">
+<form class="form-group" action="{{route('cuestion.crear')}}" method="POST">
+@csrf
 <div class="container-fluid">
   <section class="main row">
       <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
@@ -11,7 +12,7 @@
         <label></label>
         <p class="text-center">Creacion de cuestionario.</p>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" aria-label="Text input with dropdown button"placeholder="Ingrese la pregunta">
+          <input type="text" name="pregunta" class="form-control" aria-label="Text input with dropdown button" placeholder="Ingrese la pregunta">
           <div class="input-group-prepend">
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tiempo de pregunta</button>
             <div class="dropdown-menu">
@@ -30,7 +31,7 @@
 <input type="checkbox" aria-label="Checkbox for following text input" >
 </div>
 </div>
-<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 1">
+<input type="text" name="respuesta1" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 1">
 </div>
 
 <div class="input-group mb-3">
@@ -39,7 +40,7 @@
 <input type="checkbox" aria-label="Checkbox for following text input" >
 </div>
 </div>
-<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 2">
+<input type="text" name="respuesta2" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 2">
 </div>
 
 <div class="input-group mb-3">
@@ -48,7 +49,7 @@
 <input type="checkbox" aria-label="Checkbox for following text input" >
 </div>
 </div>
-<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 3">
+<input type="text" name="respuesta3" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 3">
 </div>
 
 <div class="input-group mb-3">
@@ -57,7 +58,7 @@
 <input type="checkbox" aria-label="Checkbox for following text input" >
 </div>
 </div>
-<input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 4">
+<input type="text" name="respuesta4" class="form-control" aria-label="Text input with checkbox" placeholder="Ingrese respuesta 4">
 </div>
 
 <button type="button" class="btn btn-success">Guardar pregunta</button>
