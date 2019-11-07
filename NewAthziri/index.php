@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="Inicio/css/bootstrap.min.css">
-	<link rel="stylesheet" href="Inicio/style.css">
+	<link rel="stylesheet" href="Inicio/css/styleInicio.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title> INICIO </title>

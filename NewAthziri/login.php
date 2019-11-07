@@ -13,7 +13,7 @@
     $_SESSION['logueado']="si";
     $_SESSION['User'] = $fila['User'];
     $_SESSION['Nombre'] = $fila['Nombre'];
-    header('location:Inicio/index.php');
+    header('Location:Inicio/index.php');
   }
 
 ?>

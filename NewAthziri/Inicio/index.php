@@ -1,5 +1,6 @@
 <?php
-  session_start();  if (!isset($_SESSION["logueado"])) header("location:../admins.php");
+  //si no esta logueado mandarlo al index principal
+  session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/styleInicio.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title> INICIO </title>
@@ -32,7 +33,7 @@
 
 					<div class="collapse navbar-collapse" id="navbar-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="../index.php"><h5>Cerrar Sesion</h5></a></li>
+							<li><a href="salir.php"><h5>Cerrar Sesion</h5></a></li>
 						</ul>
 					</div>
 				</div>
