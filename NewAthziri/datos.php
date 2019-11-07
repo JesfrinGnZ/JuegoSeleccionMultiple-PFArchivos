@@ -12,5 +12,4 @@
 
 	$guardar = mysqli_query($conexion,"INSERT INTO ADMINISTRADOR VALUES ('$Usuario','$Nombre','$Contrasena')");
 
-
 ?>

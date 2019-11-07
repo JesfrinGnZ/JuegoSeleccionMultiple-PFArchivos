@@ -47,6 +47,18 @@
 				</footer>
 
 
+        <!--Botones-->
+        <div class="container-fluid">
+          <section class="main row">
+            <div class="btn-group">
+              <button type="button" class="btn btn-success">Usar</button>
+              <button type="button" class="btn btn-info">Borrar</button>
+              <a href="crearCuestionario.php">
+                <button type="submit" class="btn btn-danger">Crear</button>
+              </a>
+            </div>
+          </section>
+        </div>
 
 	<script src="js/jquery.js"> </script>
 	<script src="js/bootstrap.min.js"> </script>

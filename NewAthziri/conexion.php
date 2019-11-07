@@ -1,5 +1,5 @@
 <?php
-	if(!$conexion = mysqli_connect("localhost","root","adminmariadb","Cuestionarios"))
+	if(!$conexion = mysqli_connect("localhost","root","7321","Cuestionarios"))
 	{
 		echo"Error";
 	}
