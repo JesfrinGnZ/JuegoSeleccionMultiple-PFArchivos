@@ -6,10 +6,15 @@
 	<link rel="stylesheet" href="Inicio/css/bootstrap.min.css">
 	<link rel="stylesheet" href="Inicio/css/styleInicio.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/supersized.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
-	<title> INICIO </title>
+	<title> Ahtziri | Inicio </title>
 </head>
-<body background="Inicio/img/fondo.jpg">
+<!--<body background="Inicio/img/fondo.jpg"> -->
+	<body>
 
 	<!--Menu de navegacion navbar---->
 	<div class="">
@@ -24,7 +29,7 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a href="index.php" class="navbar-brand"> <h4>Inicio || Athziri</h4> </a>
+						<a href="index.php" class="navbar-brand"> <h4>Ahtziri</h4> </a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="navbar-1">
@@ -38,11 +43,18 @@
 		</header>
 	</div>
 
-	<footer>
-		<div class="container">
-			<center> <h5> Copyright &copy;</h5> </center>
-		</div>
-	</footer>
+	<div class="page-container">
+		<p><img class="logo" src="../NewAthziri/Imagenes/Logo.png" align="middle" style="width:30%; height:30%;">
+		<hr>
+		<a href="admins.php" style="color:#FFFFFF;">
+				<button type="submit">Soy Administrador</button>
+		 </a>
+		 <a href="ingresoCodigo.php" style="color:#FFFFFF;">
+			 <button type="submit">Soy Jugador</button>
+		 </a>
+
+	</div>
+
 
 </body>
 

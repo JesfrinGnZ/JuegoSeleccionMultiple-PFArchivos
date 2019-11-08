@@ -2,7 +2,7 @@
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>LOGIN ATHZIRI </title>
+        <title>Ahtziri | LogIn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -21,14 +21,19 @@
     </head>
     <body>
         <div class="page-container">
-		        <img class="logo" src="../NewAthziri/Imagenes/LOGOITSWK.png"/ style="width:30%; height:30%;">
-            <h1>Login</h1>
+		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
+            <h1>LogIn</h1>
             <form action="login.php" method="post">
-                <input type="text" name="user" class="username" placeholder="Username">
-                <input type="password" name="pass" class="password" placeholder="Password">
+                <input type="text" name="user" class="username" placeholder="Nombre de Usuario">
+                <input type="password" name="pass" class="password" placeholder="Contraseña">
                 <button type="submit" name="login"> Iniciar Sesion </button>
             </form>
-            <button type="submit" name="rgis"> <a href="Registro.php"> Registrarse aqui.. </a> </button>
+            <a href="Registro.php" style="color:#FFFFFF;">
+       			 <button type="submit">Registrate</button>
+       		 </a>
+           <a href="index.php" style="color:#FFFFFF;">
+      			 <button type="submit">Regresar</button>
+      		 </a>
         </div>
 
         <!-- Javascript -->

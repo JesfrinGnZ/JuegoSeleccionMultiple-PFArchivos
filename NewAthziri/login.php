@@ -26,7 +26,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
    </head>
-   <body style="background-color:lightgrey;">
+   <body style="background-color:white;">
      <div class="container">
        <div class="row">
          <div class="col-md-6 col-md-offset-3">

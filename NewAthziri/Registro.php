@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/supersized.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="Inicio/fonts/tipografias.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -21,15 +22,17 @@
     </head>
     <body>
         <div class="page-container">
-		      <img class="logo" src="../NewAthziri/Imagenes/LOGOITSWK.png"/ style="width:30%; height:30%;">
-            <h1> Registro</h1>
+		      <img class="logo" src="../NewAthziri/Imagenes/Logo.png" style="width:30%; height:30%;">
+            <h1> Registro </h1>
             <form action="datos.php" method="post">
-                <input type="text" name="U" class="username" placeholder="Username">
-                <input type="text" name="N" class="email" placeholder="Email">
-                <input type="password" name="P" class="password" placeholder="Password">
+                <input type="text" name="U" class="username" placeholder="Nombre de Usuario">
+                <input type="text" name="N" class="email" placeholder="Nombre Completo">
+                <input type="password" name="P" class="password" placeholder="Contraseña">
                 <button type="submit"> Registrar </button>
             </form>
-            <button type="submit"> <a href="admins.php"> Iniciar Sesion </a></button>
+            <a href="index.php" style="color:#FFFFFF;">
+       			 <button type="submit">Cancelar</button>
+       		 </a>
         </div>
 
         <!-- Javascript -->

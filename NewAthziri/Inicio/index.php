@@ -51,7 +51,9 @@
         <div class="container-fluid">
           <section class="main row">
             <div class="btn-group">
-              <button type="button" class="btn btn-success">Usar</button>
+              <a href="verPreguntas.php">
+                  <button type="button" class="btn btn-success">Usar</button>
+              </a>
               <button type="button" class="btn btn-info">Borrar</button>
               <a href="crearCuestionario.php">
                 <button type="submit" class="btn btn-danger">Crear</button>
