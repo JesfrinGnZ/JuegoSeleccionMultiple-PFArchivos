@@ -13,6 +13,8 @@
     $_SESSION['logueado']="si";
     $_SESSION['User'] = $fila['User'];
     $_SESSION['Nombre'] = $fila['Nombre'];
+    $_SESSION['nombreDeCuestionario'] = null;
+	$_SESSION['descripcionCuestionario'] = null;
     header('Location:Inicio/index.php');
   }
 
