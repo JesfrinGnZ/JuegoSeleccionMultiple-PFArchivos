@@ -1,6 +1,7 @@
 <?php
   //si no esta logueado mandarlo al index principal
   session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,11 +52,9 @@
         <div class="container-fluid">
           <section class="main row">
             <div class="btn-group">
-              <a href="verPreguntas.php">
-                  <button type="button" class="btn btn-success">Usar</button>
-              </a>
+              <button type="button" class="btn btn-success">Usar</button>
               <button type="button" class="btn btn-info">Borrar</button>
-              <a href="crearCuestionario.php">
+              <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
                 <button type="submit" class="btn btn-danger">Crear</button>
               </a>
             </div>
