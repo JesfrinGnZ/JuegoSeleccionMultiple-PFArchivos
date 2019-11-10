@@ -14,7 +14,8 @@
     $_SESSION['User'] = $fila['User'];
     $_SESSION['Nombre'] = $fila['Nombre'];
     $_SESSION['nombreDeCuestionario'] = null;
-	$_SESSION['descripcionCuestionario'] = null;
+		$_SESSION['descripcionCuestionario'] = null;
+	  $_SESSION['idCuestionario']=null;
     header('Location:Inicio/index.php');
   }
 
