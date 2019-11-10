@@ -30,7 +30,7 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
 
           <div class="collapse navbar-collapse" id="navbar-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="salir.php"><h5>Cerrar Sesion</h5></a></li>
+              <li><a href="../salir.php"><h5>Cerrar Sesion</h5></a></li>
             </ul>
           </div>
         </div>
@@ -42,11 +42,11 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
       <form action="crearPreguntas.php" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Nombre de cuestionario</label>
-          <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion">
+          <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Descripcion</label>
-        <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion">
+        <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
         </div>
         <input type="submit" name="" value="Crear">
       </form>
