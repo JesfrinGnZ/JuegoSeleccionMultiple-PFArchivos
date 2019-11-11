@@ -77,7 +77,6 @@
         <div class="container-fluid">
           <section class="main row">
             <div class="btn-group">
-
               <a href="verPreguntas.php">
                   <button type="button" class="btn btn-success">Usar</button>
               </a>
