@@ -85,7 +85,6 @@
               <button type="button" class="btn btn-info">Borrar</button>
               <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
 
-
                 <button type="submit" class="btn btn-danger">Crear</button>
               </a>
             </div>
