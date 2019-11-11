@@ -15,7 +15,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title> Preguntas </title>
 </head>
-<body background="img/fondo.jpg">
+<body background="img/fondo 1.png">
 
 	<!--Menu de navegacion navbar---->
 	<div class="">
@@ -45,7 +45,7 @@
   <?php
       include("../conexion.php");
       $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo, C.idCuestionario
-            FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1'");
+            FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1' LIMIT 1");
 
       foreach ($resultado as $fila) {
         echo "<p>".utf8_encode($fila["Descripcion"])."</p>";

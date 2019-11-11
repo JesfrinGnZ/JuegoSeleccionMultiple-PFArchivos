@@ -94,186 +94,189 @@ include("inicioCreacionDePreguntas.php");
       </nav>
     </header>
   </div>
-  <body onload="noatras();">
+  <body onload="noatras();" background="../img/fondo 1.png">
 
 <h2>Creacion de pregunta, cuestionario:<?php echo $_SESSION['nombreDeCuestionario']; ?></h2>
 
 </script>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"  onsubmit="return validaCampos();">
-                        <div class="form-group">
-                            <label for="nombre">
-                              <h4><span class="label label-primary">Pregunta*</span></h4>
+<div class="container">
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"  onsubmit="return validaCampos();">
+                          <div class="form-group">
+                              <label for="nombre">
+                                <h4><span class="label label-primary">Pregunta*</span></h4>
+                                </label>
+                              <input class="form-control" id="pregunta" name="pregunta" type="text" placeholder="Ingrese pregunta"></input>
+                          </div>
+                          <div class="form-group">
+                              <label for="edad">
+                                <h4><span class="label label-success">Respuesta1*</span></h4>
                               </label>
-                            <input class="form-control" id="pregunta" name="pregunta" type="text" placeholder="Ingrese pregunta"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">
-                              <h4><span class="label label-success">Respuesta1*</span></h4>
-                            </label>
-                            <input class="form-control" id="r1" name="r1" type="text" placeholder="Ingrese respuesta"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">
-                              <h4> <span class="label label-warning">Respuesta2*</span></h4>
-                            </label>
-                            <input class="form-control" id="r2" name="r2" type="text" placeholder="Ingrese respuesta"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">
-                              <h4><span class="label label-danger">Respuesta3*</span></h4>
-                            </label>
-                            <input class="form-control" id="r3" name="r3" type="text" placeholder="Ingrese respuesta"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">
-                              <h4><span class="label label-info">Respuesta4*</span></h4>
-                            </label>
-                            <input class="form-control" id="r4" name="r4" type="text" placeholder="Ingrese respuesta"></input>
-                        </div><br>
+                              <input class="form-control" id="r1" name="r1" type="text" placeholder="Ingrese respuesta"></input>
+                          </div>
+                          <div class="form-group">
+                              <label for="edad">
+                                <h4> <span class="label label-warning">Respuesta2*</span></h4>
+                              </label>
+                              <input class="form-control" id="r2" name="r2" type="text" placeholder="Ingrese respuesta"></input>
+                          </div>
+                          <div class="form-group">
+                              <label for="edad">
+                                <h4><span class="label label-danger">Respuesta3*</span></h4>
+                              </label>
+                              <input class="form-control" id="r3" name="r3" type="text" placeholder="Ingrese respuesta"></input>
+                          </div>
+                          <div class="form-group">
+                              <label for="edad">
+                                <h4><span class="label label-info">Respuesta4*</span></h4>
+                              </label>
+                              <input class="form-control" id="r4" name="r4" type="text" placeholder="Ingrese respuesta"></input>
+                          </div><br>
 
-                        <h4><label for="">Escoja las respuestas correctas</label><br></h4>
-                        <label for="test">
-                        <input type="checkbox" name="rc1" id="rc1">
-                        Respuesta 1
-                        </label><br>
-                        <label for="test">
-                        <input type="checkbox" name="rc2" id="rc2">
-                        Respuesta 2
-                        </label><br>
-                        <label for="test">
-                        <input type="checkbox" name="rc3" id="rc3">
-                        Respuesta 3
-                        </label><br>
-                        <label for="test">
-                        <input type="checkbox" name="rc4" id="rc4">
-                        Respuesta 4
-                      </label><br><br>
+                          <h4><label for="">Escoja las respuestas correctas</label><br></h4>
+                          <label for="test">
+                          <input type="checkbox" name="rc1" id="rc1">
+                          Respuesta 1
+                          </label><br>
+                          <label for="test">
+                          <input type="checkbox" name="rc2" id="rc2">
+                          Respuesta 2
+                          </label><br>
+                          <label for="test">
+                          <input type="checkbox" name="rc3" id="rc3">
+                          Respuesta 3
+                          </label><br>
+                          <label for="test">
+                          <input type="checkbox" name="rc4" id="rc4">
+                          Respuesta 4
+                        </label><br><br>
 
-                      <h4><label for="">Escoja el tiempo de respuesta</label></h4>
-                        <select name="tiempo" id="tiempo" class="browser-default custom-select">
-                          <option value="20">20s</option>
-                          <option value="30">30s</option>
-                          <option value="40">40s</option>
-                          <option value="50">50s</option>
-                          <option value="60">60s</option>
-                        </select>
+                        <h4><label for="">Escoja el tiempo de respuesta</label></h4>
+                          <select name="tiempo" id="tiempo" class="browser-default custom-select">
+                            <option value="20">20s</option>
+                            <option value="30">30s</option>
+                            <option value="40">40s</option>
+                            <option value="50">50s</option>
+                            <option value="60">60s</option>
+                          </select>
 
 
-                        <div class="text-center">
-                          <input  type="submit" class="btn btn-success" value="Crear pregunta">
-                        </div>
-                   </form>
+                          <div class="text-center">
+                            <input  type="submit" class="btn btn-success" value="Crear pregunta">
+                          </div>
+  </form>
 
-                   <h3><span class="label label-danger">Preguntas creadas</span></h3><br>
+                     <h3><span class="label label-danger">Preguntas creadas</span></h3><br>
 
 
- <?php
+   <?php
 
- //echo "EMPEZANDO A REALIZAR ACCIONES ";
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     // Usamos la Variable Super Global $_REQUEST
-     $nombreDePregunta = htmlspecialchars($_REQUEST['pregunta']);
-     if (!empty($nombreDePregunta)){//Aca se trabajara con las preguntas
-  //       echo "Se crearan las preguntas";
-//         echo "Tiempo:".$_POST['tiempo']."<br>";
-         //Valores
-         $descripcion=$_POST['pregunta'];
-         $tiempo=$_POST['tiempo'];
-         $idCuestionario=$_SESSION['idCuestionario'];
-         include("../../conexion.php");
-         //Guardar la pregunta
-          $guardar2=mysqli_query($conexion,"INSERT INTO PREGUNTA(Descripcion,Tiempo,Cuestionario_Id_Pregunta) VALUES ('$descripcion','$tiempo','$idCuestionario')");
-        //Obtener el id de la pregunta
-        $preguntaCreada = mysqli_query($conexion,"SELECT * FROM PREGUNTA order by idPregunta DESC LIMIT 1");
-        while($pregunta = mysqli_fetch_array($preguntaCreada)){
-        //  echo "Id de pregunta guardada:".$pregunta['idPregunta'];
-          $idDePreguntaCreada=$pregunta['idPregunta'];
-        }
-       //Se crean las respuestas
-        if (isset($_POST["rc1"])) {
-          $respuestaEsCorrecta="1";
-        } else {
-          $respuestaEsCorrecta="0";
-        }
-        $descripcion=$_POST['r1'];
-        $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','1','cuadrado','verde','$idDePreguntaCreada','$respuestaEsCorrecta')");
-
-        if (isset($_POST["rc2"])) {
-          $respuestaEsCorrecta="1";
-        } else {
-          $respuestaEsCorrecta="0";
-        }
-        $descripcion=$_POST['r2'];
-        $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','2','triangulo','amarillo','$idDePreguntaCreada','$respuestaEsCorrecta')");
-
-        if (isset($_POST["rc3"])) {
-          $respuestaEsCorrecta="1";
-        } else {
-          $respuestaEsCorrecta="0";
-        }
-        $descripcion=$_POST['r3'];
-        $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','3','circulo','rojo','$idDePreguntaCreada','$respuestaEsCorrecta')");
-
-        if (isset($_POST["rc4"])) {
-          $respuestaEsCorrecta="1";
-        } else {
-          $respuestaEsCorrecta="0";
-        }
-        $descripcion=$_POST['r4'];
-        $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','4','rombo','celeste','$idDePreguntaCreada','$respuestaEsCorrecta')");
-
-//Se cargan las preguntas y respuestas creados de la pregunta para colocarlos eb una mysql_tabla
-
-$preguntasCreadas = mysqli_query($conexion,"SELECT idPregunta,Descripcion,Tiempo FROM PREGUNTA WHERE Cuestionario_Id_Pregunta=$idCuestionario");
-
-echo "<table class=\"table table-dark\">
-<thead>
-  <tr>
-    <th scope=\"col\">Pregunta</th>
-    <th scope=\"col\">Respuesta1</th>
-    <th scope=\"col\">Respueta2</th>
-    <th scope=\"col\">Respuesta3</th>
-    <th scope=\"col\">Respuesta4</th>
-
-  </tr>
-</thead>
-<tbody>";
-while($pregunta = mysqli_fetch_array($preguntasCreadas)){
-  //echo "Id de pregunta creada:".$pregunta['idPregunta'];
-  echo " <tr>";
-  $idDepreguntaActual=$pregunta['idPregunta'];
-  $respuestasDePregunta =mysqli_query($conexion,"SELECT * FROM RESPUESTA WHERE Pregunta_Id=$idDepreguntaActual");
-  echo "<td>".$pregunta['Descripcion']."</td> ";
-  while($respuestaDePregunta=mysqli_fetch_array($respuestasDePregunta)){
-    echo "<td>".$respuestaDePregunta['Descripcion']."</td> ";
-  }
-  echo " </tr>";
-}
-
-echo "  </tbody>
-      </table>";
-        /*function guardarRespuesta($postEsCorrecta,$postDescripcion,$noDeRespuesta,$simbolo,$color){
-          echo "Guardando pregunta";
+   //echo "EMPEZANDO A REALIZAR ACCIONES ";
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       // Usamos la Variable Super Global $_REQUEST
+       $nombreDePregunta = htmlspecialchars($_REQUEST['pregunta']);
+       if (!empty($nombreDePregunta)){//Aca se trabajara con las preguntas
+    //       echo "Se crearan las preguntas";
+  //         echo "Tiempo:".$_POST['tiempo']."<br>";
+           //Valores
+           $descripcion=$_POST['pregunta'];
+           $tiempo=$_POST['tiempo'];
+           $idCuestionario=$_SESSION['idCuestionario'];
+           include("../../conexion.php");
+           //Guardar la pregunta
+            $guardar2=mysqli_query($conexion,"INSERT INTO PREGUNTA(Descripcion,Tiempo,Cuestionario_Id_Pregunta) VALUES ('$descripcion','$tiempo','$idCuestionario')");
+          //Obtener el id de la pregunta
+          $preguntaCreada = mysqli_query($conexion,"SELECT * FROM PREGUNTA order by idPregunta DESC LIMIT 1");
+          while($pregunta = mysqli_fetch_array($preguntaCreada)){
+          //  echo "Id de pregunta guardada:".$pregunta['idPregunta'];
+            $idDePreguntaCreada=$pregunta['idPregunta'];
+          }
+         //Se crean las respuestas
           if (isset($_POST["rc1"])) {
             $respuestaEsCorrecta="1";
           } else {
             $respuestaEsCorrecta="0";
           }
           $descripcion=$_POST['r1'];
-          $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','$noDeRespuesta','$simbolo','$color','$idDePreguntaCreada','$respuestaEsCorrecta')");
-        }
+          $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','1','cuadrado','verde','$idDePreguntaCreada','$respuestaEsCorrecta')");
 
-        guardarRespuesta("rc1","r1",1,"cuadrado","verde");*/
+          if (isset($_POST["rc2"])) {
+            $respuestaEsCorrecta="1";
+          } else {
+            $respuestaEsCorrecta="0";
+          }
+          $descripcion=$_POST['r2'];
+          $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','2','triangulo','amarillo','$idDePreguntaCreada','$respuestaEsCorrecta')");
 
-        //Se jala de la base de datos todas las preguntas con sus respuestas para ponerlas en una tabla
+          if (isset($_POST["rc3"])) {
+            $respuestaEsCorrecta="1";
+          } else {
+            $respuestaEsCorrecta="0";
+          }
+          $descripcion=$_POST['r3'];
+          $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','3','circulo','rojo','$idDePreguntaCreada','$respuestaEsCorrecta')");
 
-     }else{
-       echo "<h2>Aun no existen preguntas</h2>";
-     }
+          if (isset($_POST["rc4"])) {
+            $respuestaEsCorrecta="1";
+          } else {
+            $respuestaEsCorrecta="0";
+          }
+          $descripcion=$_POST['r4'];
+          $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','4','rombo','celeste','$idDePreguntaCreada','$respuestaEsCorrecta')");
 
- }
+  //Se cargan las preguntas y respuestas creados de la pregunta para colocarlos eb una mysql_tabla
 
-?>
+  $preguntasCreadas = mysqli_query($conexion,"SELECT idPregunta,Descripcion,Tiempo FROM PREGUNTA WHERE Cuestionario_Id_Pregunta=$idCuestionario");
+
+  echo "<table border = 2 cellspacing = 2 cellpadding = 2 class=\"table\">
+  <thead class=\"thead-light\">
+    <tr>
+      <th scope=\"col\">Pregunta</th>
+      <th scope=\"col\">Respuesta1</th>
+      <th scope=\"col\">Respueta2</th>
+      <th scope=\"col\">Respuesta3</th>
+      <th scope=\"col\">Respuesta4</th>
+    </tr>
+  </thead>
+  <tbody>";
+  while($pregunta = mysqli_fetch_array($preguntasCreadas)){
+    //echo "Id de pregunta creada:".$pregunta['idPregunta'];
+    echo " <tr>";
+    $idDepreguntaActual=$pregunta['idPregunta'];
+    $respuestasDePregunta =mysqli_query($conexion,"SELECT * FROM RESPUESTA WHERE Pregunta_Id=$idDepreguntaActual");
+    echo "<td>".$pregunta['Descripcion']."</td> ";
+    while($respuestaDePregunta=mysqli_fetch_array($respuestasDePregunta)){
+      echo "<td>".$respuestaDePregunta['Descripcion']."</td> ";
+    }
+    echo " </tr>";
+  }
+
+  echo "  </tbody>
+        </table>";
+          /*function guardarRespuesta($postEsCorrecta,$postDescripcion,$noDeRespuesta,$simbolo,$color){
+            echo "Guardando pregunta";
+            if (isset($_POST["rc1"])) {
+              $respuestaEsCorrecta="1";
+            } else {
+              $respuestaEsCorrecta="0";
+            }
+            $descripcion=$_POST['r1'];
+            $guardar3=mysqli_query($conexion,"INSERT INTO RESPUESTA(Descripcion,No_Respuesta,Simbolo,Color,Pregunta_Id,esCorrecta) VALUES ('$descripcion','$noDeRespuesta','$simbolo','$color','$idDePreguntaCreada','$respuestaEsCorrecta')");
+          }
+
+          guardarRespuesta("rc1","r1",1,"cuadrado","verde");*/
+
+          //Se jala de la base de datos todas las preguntas con sus respuestas para ponerlas en una tabla
+
+       }else{
+         echo "<h2>Aun no existen preguntas</h2>";
+       }
+
+   }
+
+  ?>
+
+</div>
+
 
 
   </body>

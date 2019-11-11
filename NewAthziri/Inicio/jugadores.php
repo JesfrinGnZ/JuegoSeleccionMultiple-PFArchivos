@@ -7,7 +7,6 @@
 session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
 
 include("../conexion.php");
-// establecer y realizar consulta. guardamos en variable.
 
 //consulta para ver el nickname de los jugadores sin traslapar otros examenes;
 $codigo=$_SESSION['esperandoConexion'];
