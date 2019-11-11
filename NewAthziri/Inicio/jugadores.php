@@ -6,13 +6,7 @@
 // Datos de la base de datos
 session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
 
-$usuario = "root";
-$password = "kittenrv2897";
-$servidor = "localhost";
-$basededatos = "Cuestionarios";
-
-// creación de la conexión a la base de datos con mysql_connect()
-$conexion = mysqli_connect( "localhost","root","kittenrv2897","Cuestionarios") or die ("No se ha podido conectar al servidor de Base de datos");
+include("../conexion.php");
 // establecer y realizar consulta. guardamos en variable.
 
 //consulta para ver el nickname de los jugadores sin traslapar otros examenes;
