@@ -42,30 +42,22 @@
 			</nav>
 		</header>
 	</div>
-				<footer>
-					<div class="container">
-						<center> <h5> Copyright &copy;</h5> </center>
-					</div>
-				</footer>
+  <?php
+      include("../conexion.php");
+      $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo, C.idCuestionario
+            FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1'");
 
-        <?php
-            //include("../conexion.php");
-            include("funciones.php");
-            //echo "<h1>uno</h1>";
-            $user = "bryan";
-            $pass = "bryan1234";
-            $resultado =  $conexion->query("select * from ADMINISTRADOR where User = '$user' AND Pass='$pass' LIMIT 1");
+      foreach ($resultado as $fila) {
+        echo "<p>".utf8_encode($fila["Descripcion"])."</p>";
 
-            //$resultado = consultar("select * from ADMINISTRADOR where User = '$user' AND Pass='$pass' LIMIT 1");
-            //echo "<h1>uno</h1>";
-            foreach ($resultado as $fila) {
-              echo "<h1>uno</h1>";
-              //echo "<p>".utf8_encode($fila["Descripcion"])."</p>";
+      }
+  ?>
 
-            }
-        ?>
-
-
+  <footer>
+    <div class="container">
+      <center> <h5> Copyright &copy;</h5> </center>
+    </div>
+  </footer>
 	<script src="js/jquery.js"> </script>
 	<script src="js/bootstrap.min.js"> </script>
 
