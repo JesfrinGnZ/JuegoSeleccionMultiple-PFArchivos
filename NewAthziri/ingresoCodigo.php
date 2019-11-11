@@ -2,7 +2,7 @@
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Ahtziri | Jugar </title>
+        <title>Ahtziri | Jugar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -23,10 +23,10 @@
         <div class="page-container">
 		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
             <h1>¡Jugar ahora!</h1>
-            <form action="index.php" method="post">
-                <input type="text" name="code" class="code" placeholder="Codigo de Cuestionario">
-                <input type="text" name="username" class="username" placeholder="Tu Nickname">
-                <button type="submit" name="login"> Ingresar </button>
+            <form action="validacionEntradas.php" method="post">
+                <input type="text" name="codigoCuestionario" class="code" placeholder="Codigo de Cuestionario">
+                <input type="text" name="nickname" class="username" placeholder="Tu Nickname">
+                <button  type="submit" name="login"> Ingresar </button>
             </form>
             <a href="index.php" style="color:#FFFFFF;">
        			 <button type="submit">Regresar</button>
