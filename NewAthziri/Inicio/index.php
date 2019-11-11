@@ -43,11 +43,12 @@
 
   <div class="page-container">
     <?php
+    include("../conexion.php");
     $id = 1;
     $usuarioLog = $_SESSION['User'];
-    $conn = mysqli_connect('localhost','root','3211','Cuestionarios');
+    //$conn = mysqli_connect('localhost','root','3211','Cuestionarios');
     $sql = "SELECT * FROM CUESTIONARIO WHERE Admin_User='".$usuarioLog."'";
-    $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($conexion,$sql);
     echo "
     <h2>Hola $usuarioLog!</h2>
       <table border = 1 cellspacing = 1 cellpadding = 1>
@@ -61,8 +62,6 @@
       echo "
         <tr>
           <td><a href=\"esperandoConexion.php?idCuest=$row[0]\">Activar</a>
-          <a href=\"esperandoConexion.php?idCuest=$row[0]\">Modificar</a>
-          <a href=\"esperandoConexion.php?idCuest=$row[0]\">Eliminar</a></td>
           <td>".$row[0]."</td>
           <td>".$row[1]."</td>
           <td>".$row[2]."</td>
@@ -77,13 +76,7 @@
         <div class="container-fluid">
           <section class="main row">
             <div class="btn-group">
-              <a href="verPreguntas.php">
-                  <button type="button" class="btn btn-success">Usar</button>
-              </a>
-
-              <button type="button" class="btn btn-info">Borrar</button>
               <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
-
                 <button type="submit" class="btn btn-danger">Crear</button>
               </a>
             </div>
