@@ -7,9 +7,9 @@
 		header("Refresh: 2; url=index.php");
 	}
 	else {
-		//echo "<img src=\"Imagenes/cargando.gif\" style=\"margin-left:35%; margin-top:10%;\"/>";
+		echo "<img src=\"Imagenes/cargando.gif\" style=\"margin-left:35%; margin-top:10%;\"/>";
 		//retornar al index
-		//header("Refresh: 2");
+		header("Refresh: 2; url=index.php");
 
 	}
 ?>
