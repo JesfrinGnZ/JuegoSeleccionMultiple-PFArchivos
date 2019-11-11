@@ -45,18 +45,21 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
     </header>
   </div>
 
-    <body>
-      <form action="crearPreguntas.php" method="post">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Nombre de cuestionario</label>
-          <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Descripcion</label>
-        <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
-        </div>
-        <input type="submit" name="" value="Crear">
-      </form>
+    <body background="../img/fondo 1.png">
+      <div class="container">
+        <form action="crearPreguntas.php" method="post">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre de cuestionario</label>
+            <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Descripcion</label>
+            <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
+          </div>
+          <input type="submit" name="" value="Crear">
+        </form>
+      </div>
+
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     </body>
