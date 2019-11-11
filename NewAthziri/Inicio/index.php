@@ -65,7 +65,7 @@
       echo "
         <tbody>
         <tr>
-          <td><a href=\"esperandoConexion.php?idCuest=$row[0]\">Activar</a>
+          <td><a href=\"esperandoConexion.php?idCuest=$row[0]&nombreCuest=$row[1]\">Activar</a>
           <td>".$row[0]."</td>
           <td>".$row[1]."</td>
           <td>".$row[2]."</td>
