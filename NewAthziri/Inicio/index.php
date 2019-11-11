@@ -7,13 +7,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styleInicio.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title> Ahtziri | Inicio </title>
 </head>
-<body background="img/fondo.jpg">
+<body background="img/fondo 1.png">
 
 	<!--Menu de navegacion navbar---->
 	<div class="">
@@ -41,7 +42,7 @@
 		</header>
 	</div>
 
-  <div class="page-container">
+  <div class="container">
     <?php
     include("../conexion.php");
     $id = 1;
@@ -51,43 +52,47 @@
     $result = mysqli_query($conexion,$sql);
     echo "
     <h2>Hola $usuarioLog!</h2>
-      <table border = 1 cellspacing = 1 cellpadding = 1>
+      <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table\">
+        <thead class=\"thead-light\">
         <tr>
-          <th> Acciones </th>
-          <th> ID </th>
-          <th> Nombre</th>
-          <th> Descripcion</th>
-        </tr>";
+          <th scope=\"col\"> Acciones </th>
+          <th scope=\"col\"> ID </th>
+          <th scope=\"col\"> Nombre</th>
+          <th scope=\"col\"> Descripcion</th>
+        </tr>
+        </thead>";
     while($row = mysqli_fetch_array($result)){
       echo "
+        <tbody>
         <tr>
           <td><a href=\"esperandoConexion.php?idCuest=$row[0]&nombreCuest=$row[1]\">Activar</a>
           <td>".$row[0]."</td>
           <td>".$row[1]."</td>
           <td>".$row[2]."</td>
           <br>
-        </tr>";
+        </tr>
+        </tbody>";
     }
     echo "</table>";
      ?>
-
+     <!--Botones-->
+     <div class="container-fluid">
+       <section class="main row">
+         <div class="btn-group">
+           <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
+             <button type="submit" class="btn btn-danger">Crear</button>
+           </a>
+         </div>
+       </section>
+     </div>
   </div>
-        <!--Botones-->
-        <div class="container-fluid">
-          <section class="main row">
-            <div class="btn-group">
-              <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
-                <button type="submit" class="btn btn-danger">Crear</button>
-              </a>
-            </div>
-          </section>
-        </div>
 
-        <footer>
-					<div class="container">
-						<center> <h5> Copyright &copy;</h5> </center>
-					</div>
-				</footer>
+
+  <footer>
+		<div class="container">
+			<center> <h5> Copyright &copy;</h5> </center>
+		</div>
+	</footer>
 
 	<script src="js/jquery.js"> </script>
 	<script src="js/bootstrap.min.js"> </script>
