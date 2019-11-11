@@ -1,6 +1,6 @@
 <?php
 
-	include("conexionLogin.php");
+	include("conexion.php");
 
 	$Usuario = $_POST['U'];
 	$Nombre = $_POST['N'];

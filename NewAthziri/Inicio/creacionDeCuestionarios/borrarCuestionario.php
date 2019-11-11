@@ -5,26 +5,22 @@ $_SESSION['nombreDeCuestionario']=null;
 $_SESSION['descripcionCuestionario']=null;
 include("../../conexion.php");
 //Buscando el ultimo cuestionario creado
-$consultaUltimoCuestionario = mysqli_query($conexion,"SELECT * FROM CUESTIONARIO order by idCuestionario DESC LIMIT 1");
-$idCuestionarioABorrar;
-while($cuestionario = mysqli_fetch_array($consultaUltimoCuestionario)){
-  echo $cuestionario['idCuestionario'];
-  $idCuestionarioABorrar=$cuestionario['idCuestionario'];
-}
-echo "<br>$idCuestionarioABorrar";
-
+$idCuestionarioABorrar=$_SESSION['idCuestionario'];
 //Consultar pregunta por pregunta para eliminar sus respuestas
-/*
-$cosultaPreguntas=mysqli_query($conexion,"SELECT * FROM PREGUNTA WHERE Cuestionario_Id_Pregunta=$idCuestionarioABorrar");
-while($preguntas = mysqli_fetch_array($cosultaPreguntas)){
-  echo $preguntas['idCuestionario'];
-  $idCuestionarioABorrar=$cuestionario['idCuestionario'];
+echo "$idCuestionarioABorrar <br>";
+$consultaPreguntas=mysqli_query($conexion,"SELECT idPregunta FROM PREGUNTA WHERE Cuestionario_Id_Pregunta=$idCuestionarioABorrar");
+while ($pregunta=mysqli_fetch_array($consultaPreguntas) ) {
+  echo $pregunta['idPregunta']."<br>";
+  $idPreguntaABorrar=$pregunta['idPregunta'];
+  $consultaRespuestas=mysqli_query($conexion,"SELECT idRespuesta FROM RESPUESTA WHERE Pregunta_Id=$idPreguntaABorrar");
+  while($respuesta=mysqli_fetch_array($consultaRespuestas)){
+    $respuestaABorrar=$respuesta['idRespuesta'];
+    mysqli_query($conexion,"DELETE FROM RESPUESTA WHERE idRespuesta=$respuestaABorrar");
+  }
+    mysqli_query($conexion,"DELETE FROM PREGUNTA WHERE idPregunta=$idPreguntaABorrar");
 }
+  mysqli_query($conexion,"DELETE FROM CUESTIONARIO WHERE idCuestionario=$idCuestionarioABorrar");
 
-//Eliminando preguntas del ultimo cuestioanrio creado
-mysqli_query($conexion,"DELETE FROM PREGUNTA WHERE Cuestionario_Id_Pregunta=$idCuestionarioABorrar");
-//Eliminando el ultimo cuestionario creado
-mysqli_query($conexion,"DELETE FROM CUESTIONARIO WHERE idCuestionario=$idCuestionarioABorrar");
-*/
+
   header('Location:../index.php');
  ?>

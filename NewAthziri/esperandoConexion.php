@@ -18,20 +18,14 @@
       horizontal-align:middle;
     }
 
-
 </style>
   </head>
   <body>
 
 <div class="content">
-  <img src="../Imagenes/cargando.gif" width="550" height="200" />
-  <img src="../Imagenes/EsperaunMomento.png" width="580" height="150" />
-
-  <?php
-  $numCuest = $_GET['idCuest'];
-  echo "<h2>Mientras todos se conectan al cuestionario $numCuest.</h2>";
-   ?>
-
+  <img src="../NewAthziri/Imagenes/cargando.gif" width="550" height="200" />
+  <img src="../NewAthziri/Imagenes/EsperaunMomento.png" width="580" height="150" />
+  <h2>Mientras todos se conectan al cuestionario.</h2>
 </div>
 
 
