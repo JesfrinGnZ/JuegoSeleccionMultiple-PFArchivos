@@ -234,6 +234,7 @@ echo "<table class=\"table table-dark\">
     <th scope=\"col\">Respueta2</th>
     <th scope=\"col\">Respuesta3</th>
     <th scope=\"col\">Respuesta4</th>
+
   </tr>
 </thead>
 <tbody>";

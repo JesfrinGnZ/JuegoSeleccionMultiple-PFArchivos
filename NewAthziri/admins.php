@@ -28,12 +28,17 @@
                 <input type="password" name="pass" class="password" placeholder="Contraseña">
                 <button type="submit" name="login"> Iniciar Sesion </button>
             </form>
-            <a href="Registro.php" style="color:#FFFFFF;">
-       			 <button type="submit">Registrate</button>
-       		 </a>
-           <a href="index.php" style="color:#FFFFFF;">
-      			 <button type="submit">Regresar</button>
-      		 </a>
+            <div class="container">
+              <a href="Registro.php" style="color:#FFFFFF;">
+         			 <button type="submit">Registrate</button>
+         		  </a>
+            </div>
+            <div class="container">
+              <a href="index.php" style="color:#FFFFFF;">
+         			 <button type="submit">Regresar</button>
+         		 </a>
+            </div>
+
         </div>
 
         <!-- Javascript -->

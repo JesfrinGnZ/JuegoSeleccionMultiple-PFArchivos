@@ -30,15 +30,8 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
 
           <div class="collapse navbar-collapse" id="navbar-1">
             <ul class="nav navbar-nav navbar-right">
-
-              <li>
-                <a href="../salir.php"><h5>Cancelar</h5></a>
-              </li>
-              <li>
-                <a href="../salir.php"><h5>Cerrar Sesion</h5></a>
-              </li>
+              <li><a href="../salir.php"><h5>Cerrar Sesion</h5></a></li>
             </ul>
-
           </div>
         </div>
       </nav>

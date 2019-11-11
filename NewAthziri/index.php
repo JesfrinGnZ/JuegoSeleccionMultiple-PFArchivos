@@ -22,21 +22,7 @@
 			<nav class="navbar navbar-default navbar-static-top navbar-inverse">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
-							<span class="sr-only"> Menu </span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-						<a href="index.php" class="navbar-brand"> <h4>Ahtziri</h4> </a>
-					</div>
-
-					<div class="collapse navbar-collapse" id="navbar-1">
-						<ul class="nav navbar-nav navbar-right">
-              <li><a href="admins.php"><h5>Administradores</h5></a></li>
-							<li><a href="index.php"><h5>Jugadores</h5></a></li>
-						</ul>
+						<a href="index.php" class="navbar-brand"> <h4>Bienvenidos a Ahtziri</h4> </a>
 					</div>
 				</div>
 			</nav>
