@@ -17,7 +17,7 @@ if ($_SESSION['nombreDeCuestionario']==null and $_SESSION['descripcionCuestionar
     $_SESSION['nombreDeCuestionario']=$NombreCuestionario;
     $_SESSION['descripcionCuestionario']=$DescripcionCuestionario;
     $User=$_SESSION['User'];
-    $guardar = mysqli_query($conexion,"INSERT INTO CUESTIONARIO(Nombre,Descripcion,Admin_User) VALUES ('$NombreCuestionario','$DescripcionCuestionario','$User')");
+    $guardar = mysqli_query($conexion,"INSERT INTO CUESTIONARIO(Nombre,Descripcion,Activo,Admin_User) VALUES ('$NombreCuestionario','$DescripcionCuestionario','0','$User')");
     $consultaUltimoCuestionario = mysqli_query($conexion,"SELECT * FROM CUESTIONARIO order by idCuestionario DESC LIMIT 1");
     while($cuestionario = mysqli_fetch_array($consultaUltimoCuestionario)){
       //echo $cuestionario['idCuestionario'];
