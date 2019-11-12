@@ -2,7 +2,11 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+    <title> Espera de Conectados</title>
     <style type="text/css">
 
     .content {
@@ -42,7 +46,7 @@ crossorigin="anonymous">
 
   mysqli_query($conexion, "UPDATE CUESTIONARIO SET Activo='1' WHERE idCuestionario=$numCuest " ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
-  echo "<h2>Mientras todos se conectan al cuestionario $nombreCuest.</h2>";
+  echo "<h2>Mientras todos se conectan al cuestionario: $nombreCuest.</h2>";
 
   $clave="";
   $max_chars = round(rand(8,8));  // tendrá entre 7 y 10 caracteres
@@ -58,27 +62,33 @@ crossorigin="anonymous">
   }
   $_SESSION['esperandoConexion']=$clave;
   $cl=$_SESSION['esperandoConexion'];
-  echo "<h3>Te puedes unir usando el codigo: $cl </h3>";
+  echo "<h2>Te puedes unir usando el codigo: $cl </h2>";
 
   mysqli_query($conexion, "INSERT INTO CUESTIONARIO_REALIZADO (CodigoGenerado,Cuestionario_Id) VALUES ('$clave','$numCuest');") or die ( "Algo ha ido mal en la consulta a la base de datos");
 
    ?>
 
-</div>
+</div><br><br><br><br><br><br>
 
-<div id="seccionRecargar"></div>
-  <button type="submit" name="login"> INICIAR JUEGO </button>
+    <div id="seccionRecargar" class="container"></div>
+
+    <div class="container">
+      <a href="verPreguntas.php">
+        <button type="submit" name="login"> INICIAR JUEGO </button>
+      </a>
+      <script type="text/javascript">
+          $(document).ready(function(){
+            setInterval(
+              function(){
+                $('#seccionRecargar').load('jugadores.php');
+              },500
+
+            );
+
+          });
+      </script>
+
+    </div>
+
   </body>
 </html>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      setInterval(
-        function(){
-          $('#seccionRecargar').load('jugadores.php');
-        },500
-
-      );
-
-    });
-</script>

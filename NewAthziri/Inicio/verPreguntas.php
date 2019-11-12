@@ -42,16 +42,52 @@
 			</nav>
 		</header>
 	</div>
-  <?php
-      include("../conexion.php");
-      $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo, C.idCuestionario
-            FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1' LIMIT 1");
 
-      foreach ($resultado as $fila) {
-        echo "<p>".utf8_encode($fila["Descripcion"])."</p>";
+  <div class="container">
+    <?php
+        include("../conexion.php");
+        $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo, C.idCuestionario
+              FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1' LIMIT 1");
+        $idTemporal = 0;
+        foreach ($resultado as $fila) {
+          echo "<h2>".utf8_encode($fila["Descripcion"])."?</h2>";
+          $idTemporal = $fila["idPregunta"];
 
-      }
+        }
+        $time_on = 10;
+
+    ?>
+    <script type="text/javascript">
+
+    (function () {
+        var timeLeft = <?php echo $time_on; ?>,
+        cinterval;
+
+        var timeDec = function (){
+            timeLeft--;
+            document.getElementById('countdown').innerHTML = timeLeft;
+            if(timeLeft === 0){
+                clearInterval(cinterval);
+            }
+        };
+
+        cinterval = setInterval(timeDec, 1000);
+     })();
+
+  </script>
+  Redirecting in <span id="countdown"><?php echo floor($time_on);
+  //redirigirndo a una vista despues de el tiempo time_on
+  header( "refresh:$time_on; url=../esperandoRespuestas.php");
+
+  //cambiandomestado de pregunta a usada que es 1
+  $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
+
   ?>
+
+  </span> seconds.<br><br>
+
+
+  </div>
 
   <footer>
     <div class="container">

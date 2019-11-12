@@ -18,22 +18,31 @@ $consultaNJugadores = "SELECT COUNT(CodigoCuestionario) AS Numero_Jugadores FROM
 $resultadoNJugadores = mysqli_query( $conexion, $consultaNJugadores ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
 //resultado de cuantos jugadores hay conectados
-  echo '<table border="1">';
-  echo '<tr>';
-  echo '<th id="Conectados">Conectados</th>';
-  echo '</tr>';
-
+echo "
+  <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table\">
+    <thead class=\"thead-black\">
+    <tr>
+      <th id=\"Conectados\">Conectados</th>
+    </tr>
+    </thead>
+    <tbody>";
 while($extraido = mysqli_fetch_array($resultadoNJugadores)) {
   echo '<tr>';
   echo  '<td>'.$extraido['Numero_Jugadores'].'</td>';
   echo '</tr>';
   }
-
-// Motrar el resultado de los registro de los jugadores (nickname)
-echo "<table borde='2'>";
-echo "<tr>";
-echo "<th>Carnet</th>";
-echo "</tr>";
+echo "
+    </tbody>
+  </table>";
+ //Motrar el resultado de los registro de los jugadores (nickname)
+echo "
+  <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table\">
+    <thead class=\"thead-black\">
+    <tr>
+      <th>NickName</th>
+    </tr>
+    </thead>
+    <tbody>";
 
 // Bucle while que recorre cada registro y muestra cada campo en la tabla.
 while ($columna = mysqli_fetch_array( $resultadoNick ))
@@ -42,8 +51,10 @@ while ($columna = mysqli_fetch_array( $resultadoNick ))
   echo "<td>" . $columna['NickName']  . "</td>";
   echo "</tr>";
 }
-
-echo "</table>"; // Fin de la tabla
+echo "
+    </tbody>
+  </table>";
+ // Fin de la tabla
 
 // cerrar conexión de base de datos
 mysqli_close( $conexion );

@@ -23,7 +23,7 @@
         <div class="page-container">
 		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
             <h1>¡Jugar ahora!</h1>
-            <form action="validacionEntradas.php" method="post">
+            <form action="validacionEntradas.php" method="POST">
                 <input type="text" name="codigoCuestionario" class="code" placeholder="Codigo de Cuestionario">
                 <input type="text" name="nickname" class="username" placeholder="Tu Nickname">
                 <button  type="submit" name="login"> Ingresar </button>
