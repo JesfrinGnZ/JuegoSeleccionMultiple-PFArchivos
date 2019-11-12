@@ -5,6 +5,7 @@
 
 // Datos de la base de datos
 session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
+
 include("../conexion.php");
 
 //consulta para ver el nickname de los jugadores sin traslapar otros examenes;
