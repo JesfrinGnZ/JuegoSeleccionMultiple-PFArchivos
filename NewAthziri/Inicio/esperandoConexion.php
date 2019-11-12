@@ -73,9 +73,12 @@ crossorigin="anonymous">
     <div id="seccionRecargar" class="container"></div>
 
     <div class="container">
-      <a href="verPreguntas.php">
-        <button type="submit" name="login"> INICIAR JUEGO </button>
-      </a>
+      <?php
+          echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest&clave=$clave\">
+                  <button type=\"submit\" name=\"login\"> INICIAR JUEGO </button>
+                </a>";
+       ?>
+
       <script type="text/javascript">
           $(document).ready(function(){
             setInterval(
