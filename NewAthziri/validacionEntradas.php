@@ -4,7 +4,7 @@
   $codCuestionarioJugado=$_POST['codigoCuestionario'];
   $nickname=$_POST['nickname'];
   include("conexion.php");
-
+  echo "<img src=\"../NewAthziri/Imagenes/cargando.gif\" width=\"550\" height=\"200\" />";
 
   $consultaNick = "SELECT Cuestionario_Id FROM CUESTIONARIO_REALIZADO WHERE CodigoGenerado='$codCuestionarioJugado';";
   $resultadoNick = mysqli_query( $conexion, $consultaNick ) or die ( "Algo ha ido mal en la consulta a la base de datos");
@@ -45,4 +45,3 @@
    $resultadoActivo->close();
 
  ?>
-

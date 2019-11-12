@@ -1,9 +1,22 @@
 
+<?php
+session_start();
+$codCuestionarioJugado=$_POST['codigoCuestionario'];
+$nickname=$_POST['nickname'];
+$_SESSION['codCuesJugado']=$codCuestionarioJugado;
+$_SESSION['nickname']=$nickname;
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <style type="text/css">
 
     .content {
@@ -23,13 +36,28 @@
   </head>
   <body>
 
-<div class="content">
-  <img src="../NewAthziri/Imagenes/cargando.gif" width="550" height="200" />
+<div  class="content">
   <?php
     include("validacionEntradas.php");
+ $resultadoNick->close();
+ $resultadoActivo->close();
    ?>
 </div>
 
+<div id="seccionRecargar">
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+      setInterval(
+        function(){
+          $('#seccionRecargar').load('verificarSiCuestionarioInicio.php');
+        },500
+      );
+    });
+</script>
 
   </body>
 </html>
