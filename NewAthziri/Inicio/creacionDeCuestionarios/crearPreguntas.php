@@ -183,7 +183,7 @@ include("inicioCreacionDePreguntas.php");
            $idCuestionario=$_SESSION['idCuestionario'];
            include("../../conexion.php");
            //Guardar la pregunta
-            $guardar2=mysqli_query($conexion,"INSERT INTO PREGUNTA(Descripcion,Tiempo,Cuestionario_Id_Pregunta) VALUES ('$descripcion','$tiempo','$idCuestionario')");
+            $guardar2=mysqli_query($conexion,"INSERT INTO PREGUNTA(Descripcion,Tiempo,Cuestionario_Id_Pregunta,Estado) VALUES ('$descripcion','$tiempo','$idCuestionario','0')");
           //Obtener el id de la pregunta
           $preguntaCreada = mysqli_query($conexion,"SELECT * FROM PREGUNTA order by idPregunta DESC LIMIT 1");
           while($pregunta = mysqli_fetch_array($preguntaCreada)){
