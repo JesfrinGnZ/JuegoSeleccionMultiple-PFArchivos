@@ -1,10 +1,10 @@
 <?php
 session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
 
-
 //recibiendo datos con get
 $nombreCuest = $_GET['nombreCuest'];
 $numCuest = $_GET['idCuest'];
+$clave = $_GET['clave'];
 
 
  ?>
@@ -50,7 +50,7 @@ $numCuest = $_GET['idCuest'];
     <body background="img/fondo 1.png">
       <div class="container">
         <?php
-            echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest\">
+            echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest&clave=$clave\">
                     <button type=\"submit\" name=\"login\"> Siguiente Pregunta </button>
                   </a>";
          ?>

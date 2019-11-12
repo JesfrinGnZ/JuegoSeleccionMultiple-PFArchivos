@@ -8,6 +8,7 @@
   //recibiendo datos con get
   $nombreCuest = $_GET['nombreCuest'];
   $numCuest = $_GET['idCuest'];
+  $clave = $_GET['clave'];
 
   //echo "<h2>Respondiendo Cuestionario: $nombreCuest</h2>";
 
@@ -34,7 +35,7 @@
     $time_on = 10;
   } else {
       //redirigimos a la parte de terminar cuestionario
-      header("Location:cuestionarioTerminado.php?nombreCuest=$nombreCuest&idCuest=$numCuest");
+      header("Location:cuestionarioTerminado.php?nombreCuest=$nombreCuest&idCuest=$numCuest&clave=$clave");
       //echo "<script>window.open('cuestionarioTerminado.php','_self')</script>";
   }
 
@@ -105,7 +106,7 @@
   </script>
   Redirigiendo en <span id="countdown"><?php echo floor($time_on);
   //redirigirndo a una vista despues de el tiempo time_on
-  header( "refresh:$time_on; url=leerRespuestas.php?idCuest=$numCuest&nomCuest=$nombreCuest&idPregunta=$idTemporal&tiempoPreg=$tiempoPreg");
+  header( "refresh:$time_on; url=leerRespuestas.php?idCuest=$numCuest&nomCuest=$nombreCuest&idPregunta=$idTemporal&tiempoPreg=$tiempoPreg&clave=$clave");
 
   //cambiandomestado de pregunta a usada que es 1
   $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");

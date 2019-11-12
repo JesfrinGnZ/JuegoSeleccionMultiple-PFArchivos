@@ -7,7 +7,7 @@
 	$numCuest = $_GET['idCuest'];
 	$nomCuest = $_GET['nomCuest'];
 	$numPreg = $_GET['idPregunta'];
-	//$tiempoPreg = $_GET['tiempoPreg'];
+	$clave = $_GET['clave'];
 
 	$resultado =  $conexion->query("SELECT R.idRespuesta, R.Descripcion,R.No_Respuesta, R.Pregunta_Id,R.esCorrecta, P.idPregunta, P.Cuestionario_Id_Pregunta
 			FROM RESPUESTA R INNER JOIN PREGUNTA P ON R.Pregunta_Id = P.idPregunta WHERE P.idPregunta = '$numPreg'");
@@ -97,7 +97,7 @@
   </script>
   Redirigiendo en <span id="countdown"><?php echo floor($time_on);
   //redirigirndo a una vista despues de el tiempo time_on
-  header( "refresh:$time_on; url=pasarSiguientePregunta.php?idCuest=$numCuest&nombreCuest=$nomCuest");
+  header( "refresh:$time_on; url=pasarSiguientePregunta.php?idCuest=$numCuest&nombreCuest=$nomCuest&clave=$clave");
 	//redirigir a otra pagina donde haya un boton que pase a la siguiente pregunta y muestre estadisticas
   //cambiando estado de pregunta a usada que es 1
   $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");

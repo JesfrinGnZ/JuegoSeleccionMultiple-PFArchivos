@@ -74,7 +74,7 @@ crossorigin="anonymous">
 
     <div class="container">
       <?php
-          echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest\">
+          echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest&clave=$clave\">
                   <button type=\"submit\" name=\"login\"> INICIAR JUEGO </button>
                 </a>";
        ?>

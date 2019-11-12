@@ -5,6 +5,7 @@ include("../conexion.php");
 //recibiendo datos con get
 $nombreCuest = $_GET['nombreCuest'];
 $numCuest = $_GET['idCuest'];
+$clave = $_GET['clave'];
 
 
 //setear las preguntas a no usadas para que se vuelvan a utilizar otra vez otra vez
@@ -57,11 +58,14 @@ $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='0' WHERE Cuestion
         <?php
           echo "<h2>El Cuestionario: $nombreCuest a sido finalizado</h2>";
 
-          //echo "<a href=\"verPreguntas.php?nombreCuest = $nombreCuest&idCuest = $numCuest\">
-          //  <button type=\"submit\" class=\"btn btn-danger\">Siguiente Pregunta</button>
-          //</a>";
+          echo "<a href=\"exportarCsv.php?clave=$clave\">
+                  <button type=\"submit\" class=\"btn btn-danger\">Exportar Csv</button>
+                </a>";
          ?>
+
+
       </div>
+
       <footer>
     		<div class="container">
     			<center> <h5> Copyright &copy;</h5> </center>
