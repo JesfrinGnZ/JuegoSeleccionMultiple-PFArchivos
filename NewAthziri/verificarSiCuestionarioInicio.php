@@ -1,18 +1,16 @@
 <?php
-echo rand(1,800);
-
+session_start();
 include("conexion.php");
 $codCuestionarioJugado=$_SESSION['codCuesJugado'];
-$query="SELECT C.Activo
-              FROM CUESTIONARIO C INNER JOIN CUESTIONARIO_REALIZADO CR ON CR.Cuestionario_Id = C.idCuestionario WHERE CR.CodigoGenerado=$codCuestionarioJugado AND C.Activo = '0'";
+$query="SELECT * FROM CUESTIONARIO INNER JOIN CUESTIONARIO_REALIZADO WHERE CUESTIONARIO.idCuestionario=CUESTIONARIO_REALIZADO.Cuestionario_Id
+        AND CUESTIONARIO.Activo='0' AND CUESTIONARIO_REALIZADO.CodigoGenerado='".$codCuestionarioJugado."'";
 $resultadoQuery=mysqli_query($conexion,$query)or die("Algo ha salido mal en la consulta");
 if($resultadoQuery->num_rows>0){
-?>
-<script>
-window.location.href = "vistaLeePregunta.php";
-</script>
-
-<?php//Si no colocar el mensaje y las imagenes
+   ?>
+   <script>
+   window.location.href = "vistaLeePregunta.php";
+   </script>
+   <?php
 }
 
- ?>
+?>

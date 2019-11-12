@@ -5,6 +5,7 @@ $codCuestionarioJugado=$_POST['codigoCuestionario'];
 $nickname=$_POST['nickname'];
 $_SESSION['codCuesJugado']=$codCuestionarioJugado;
 $_SESSION['nickname']=$nickname;
+
  ?>
 
 <!DOCTYPE html>
@@ -35,12 +36,16 @@ $_SESSION['nickname']=$nickname;
   </head>
   <body>
 
-<div id="seccionRecargar" class="content">
+<div  class="content">
   <?php
     include("validacionEntradas.php");
  $resultadoNick->close();
  $resultadoActivo->close();
    ?>
+</div>
+
+<div id="seccionRecargar">
+
 </div>
 
 <script type="text/javascript">
@@ -49,13 +54,10 @@ $_SESSION['nickname']=$nickname;
       setInterval(
         function(){
           $('#seccionRecargar').load('verificarSiCuestionarioInicio.php');
-        },5000
+        },500
       );
     });
 </script>
-<?php
-  echo "Este es mi mensaje";
-?>
 
   </body>
 </html>
