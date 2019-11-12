@@ -3,6 +3,41 @@
 
   session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
 
+  include("../conexion.php");
+
+  //recibiendo datos con get
+  $nombreCuest = $_GET['nombreCuest'];
+  $numCuest = $_GET['idCuest'];
+
+  //echo "<h2>Respondiendo Cuestionario: $nombreCuest</h2>";
+
+  //desactivando custionario para todods los clientes que se unieron despues de tiempo
+  //en este caso los clientes deben verificar si esta en 0 para empezar a correr tiempo
+  $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='0' WHERE idCuestionario='$numCuest'");
+
+  $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo,P.Estado, C.idCuestionario
+        FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '$numCuest' AND P.Estado='0' LIMIT 1");
+
+  $idTemporal = 0;
+  $tiempoPreg = 0;
+  $descripcionPreg = "";
+
+  //validando que la consulta haya recuperado algo
+  if ($resultado->num_rows>0) {
+    // code...
+    foreach ($resultado as $fila) {
+      //echo "<h2>".utf8_encode($fila["Descripcion"])."?</h2>";
+      $descripcionPreg = $fila["Descripcion"];
+      $idTemporal = $fila["idPregunta"]; //guarda el id de la pregunta a trabajar
+      $tiempoPreg = $fila["Tiempo"]; //guarda el id de la pregunta a trabajar
+    }
+    $time_on = 10;
+  } else {
+      //redirigimos a la parte de terminar cuestionario
+      header("Location:cuestionarioTerminado.php?nombreCuest=$nombreCuest&idCuest=$numCuest");
+      //echo "<script>window.open('cuestionarioTerminado.php','_self')</script>";
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,16 +80,9 @@
 
   <div class="container">
     <?php
-        include("../conexion.php");
-        $resultado =  $conexion->query("SELECT P.idPregunta, P.Descripcion, P.Tiempo, C.idCuestionario
-              FROM PREGUNTA P INNER JOIN CUESTIONARIO C ON P.Cuestionario_Id_Pregunta = C.idCuestionario WHERE C.idCuestionario = '1' LIMIT 1");
-        $idTemporal = 0;
-        foreach ($resultado as $fila) {
-          echo "<h2>".utf8_encode($fila["Descripcion"])."?</h2>";
-          $idTemporal = $fila["idPregunta"];
+      echo "<h2>Respondiendo Cuestionario: $nombreCuest</h2>
+          <h2>$descripcionPreg ??</h2>";
 
-        }
-        $time_on = 10;
 
     ?>
     <script type="text/javascript">
@@ -75,9 +103,9 @@
      })();
 
   </script>
-  Redirecting in <span id="countdown"><?php echo floor($time_on);
+  Redirigiendo en <span id="countdown"><?php echo floor($time_on);
   //redirigirndo a una vista despues de el tiempo time_on
-  header( "refresh:$time_on; url=../esperandoRespuestas.php");
+  header( "refresh:$time_on; url=leerRespuestas.php?idCuest=$numCuest&nomCuest=$nombreCuest&idPregunta=$idTemporal&tiempoPreg=$tiempoPreg");
 
   //cambiandomestado de pregunta a usada que es 1
   $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
