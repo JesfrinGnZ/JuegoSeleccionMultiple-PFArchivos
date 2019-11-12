@@ -10,7 +10,7 @@
   $resultadoNick = mysqli_query( $conexion, $consultaNick ) or die ( "Algo ha ido mal en la consulta a la base de datos");
   $row_cnt = $resultadoNick->num_rows;
   if ($row_cnt==0) {
-    echo "CUESTIONARIO NO EXISTE";
+    echo "<h2>Lo sentimos el cuestionario no existe</h2>";
   }else{
       while($resultado = mysqli_fetch_array($resultadoNick)) {
         $idCuestionarioGuardado = $resultado['Cuestionario_Id'];
@@ -26,13 +26,17 @@
           if ($row_cnt3==0) {
             $insertarJug = "INSERT INTO JUGADOR (Nickname, codigoCuestionario) VALUES ('$nickname','$codCuestionarioJugado');";
             $insertarJug = mysqli_query( $conexion, $insertarJug ) or die ( "Algo ha ido mal en la consulta a la base de datos");
-            echo "INSERTADO ";
+            echo "
+              <img src=\"../NewAthziri/Imagenes/EsperaunMomento.png\" width=\"580\" height=\"150\" />
+              <h2>Esperando a los demas jugadores.</h2>
+              <h2>Nickname:$nickname</h2>";
+
           }else{
-            echo "VALIO VERGA";
+            echo "<h2>El nickName que has escogido ya esta en uso.Selecciona otro</h2>";
           }
 
       }else{
-        echo "VERGUEOS";
+        echo "<h2>Lo sentimos el cuestionario no esta disponible</h2>";
       }
   }
 
@@ -40,9 +44,5 @@
    $resultadoNick->close();
    $resultadoActivo->close();
 
-  echo "$codCuestionarioJugado <br>";
-  echo "$nickname<br>";
-
-  $guardar = mysqli_query($conexion,"INSERT INTO JUGADOR VALUES (null,'$nickname','$codCuestionarioJugado')");
-
  ?>
+
