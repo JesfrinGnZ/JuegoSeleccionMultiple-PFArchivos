@@ -9,7 +9,7 @@ $clave = $_GET['clave'];
 
 
 //setear las preguntas a no usadas para que se vuelvan a utilizar otra vez otra vez
-$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='0' WHERE Cuestionario_Id_Pregunta='$numCuest'");
+//$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='0' WHERE Cuestionario_Id_Pregunta='$numCuest'");
 
 
 

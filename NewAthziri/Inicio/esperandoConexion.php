@@ -43,6 +43,8 @@ crossorigin="anonymous">
   $nombreCuest = $_GET['nombreCuest'];
   $numCuest = $_GET['idCuest'];
 
+  //antes de iniciar setear preguntas a 0
+  $guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='0' WHERE Cuestionario_Id_Pregunta='$numCuest'");
 
   mysqli_query($conexion, "UPDATE CUESTIONARIO SET Activo='1' WHERE idCuestionario=$numCuest " ) or die ( "Algo ha ido mal en la consulta a la base de datos");
 

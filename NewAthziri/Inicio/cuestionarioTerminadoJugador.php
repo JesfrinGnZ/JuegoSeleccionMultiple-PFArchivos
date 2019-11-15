@@ -1,21 +1,3 @@
-<?php
-session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.php"); exit(); }
-
-include("../conexion.php");
-//recibiendo datos con get
-$nombreCuest = $_GET['nombreCuest'];
-$numCuest = $_GET['idCuest'];
-$clave = $_GET['clave'];
-$numPreg = $_GET['numPreg'];
-
-//haber aqui si da el cambio de estado de pregunta
-//$guardar1 = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
-
-//en este caso los clientes deben verificar si esta en 0 para empezar a correr tiempo
-$guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCuestionario='$numCuest'");
-
-
- ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -45,7 +27,7 @@ $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCu
           <div class="collapse navbar-collapse" id="navbar-1">
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="../salir.php"><h5>Cerrar Sesion</h5></a>
+                
               </li>
             </ul>
 
@@ -57,14 +39,9 @@ $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCu
 
     <body background="img/fondo 1.png">
       <div class="container">
-        <?php
-            //$guardar1 = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
-            echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest&clave=$clave\">
-                    <button type=\"submit\" name=\"login\"> Siguiente Pregunta </button>
-                  </a>";
-            $guardar1 = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
-         ?>
+      <h2>SE TERMINO EL CUESTIONARIO PARA EL JUGADOR</h2>
       </div>
+
       <footer>
     		<div class="container">
     			<center> <h5> Copyright &copy;</h5> </center>

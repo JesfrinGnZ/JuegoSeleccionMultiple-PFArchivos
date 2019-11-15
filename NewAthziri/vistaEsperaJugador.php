@@ -1,10 +1,31 @@
 
 <?php
 session_start();
+include("conexion.php");
 $codCuestionarioJugado=$_POST['codigoCuestionario'];
 $nickname=$_POST['nickname'];
+
+//loagrego a sesion para acceder desde cualquier lado
 $_SESSION['codCuesJugado']=$codCuestionarioJugado;
 $_SESSION['nickname']=$nickname;
+//$_SESSION['pregTotales']= null;
+//$_SESSION['pregActual']= null;
+
+
+//recuperando cuestionario
+//$cuest =  $conexion->query("SELECT * FROM CUESTIONARIO_REALIZADO WHERE CodigoGenerado = '$codCuestionarioJugado' LIMIT 1");
+
+
+//$sql = "SELECT COUNT(PREGUNTA.Cuestionario_Id_Pregunta) AS NoPreguntas FROM CUESTIONARIO_REALIZADO
+//INNER JOIN CUESTIONARIO ON CUESTIONARIO_REALIZADO.Cuestionario_Id=CUESTIONARIO.idCuestionario
+//INNER JOIN PREGUNTA ON PREGUNTA.Cuestionario_Id_Pregunta='4';";
+//resultado de cuantos jugadores hay conectados
+//$resultadoNPreguntas = mysqli_query( $conexion, $sql ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+//while($extraido = mysqli_fetch_array($resultadoNPreguntas)) {
+//  $_SESSION['pregTotales']= $extraido['NoPreguntas'];
+
+
+//  }
 
  ?>
 
