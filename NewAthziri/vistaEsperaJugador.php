@@ -8,6 +8,11 @@ $nickname=$_POST['nickname'];
 //loagrego a sesion para acceder desde cualquier lado
 $_SESSION['codCuesJugado']=$codCuestionarioJugado;
 $_SESSION['nickname']=$nickname;
+
+//guardar jugador en la bd
+//guardando  jugador pero ya se guarda
+//$guardar = mysqli_query($conexion,"INSERT INTO JUGADOR VALUES (null,'$nickname','$codCuestionarioJugado')");
+
 //$_SESSION['pregTotales']= null;
 //$_SESSION['pregActual']= null;
 

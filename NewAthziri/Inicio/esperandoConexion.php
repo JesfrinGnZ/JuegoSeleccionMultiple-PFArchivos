@@ -66,6 +66,7 @@ crossorigin="anonymous">
   $cl=$_SESSION['esperandoConexion'];
   echo "<h2>Te puedes unir usando el codigo: $cl </h2>";
 
+  //insertando cuestionario realizado
   mysqli_query($conexion, "INSERT INTO CUESTIONARIO_REALIZADO (CodigoGenerado,Cuestionario_Id) VALUES ('$clave','$numCuest');") or die ( "Algo ha ido mal en la consulta a la base de datos");
 
    ?>

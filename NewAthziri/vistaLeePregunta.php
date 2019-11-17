@@ -5,7 +5,7 @@ $time_on=20;
 
 //recibiendo datos con get
 $codCuest = $_SESSION['codCuesJugado'];
-$nick = $_POST['nickname'];
+$nick = $_SESSION['nickname']; //este era el clavo porque ya no daba el nick mas adelante no estaba el $_sesion
 
 //recuperando cuestionario
 $cuest =  $conexion->query("SELECT * FROM CUESTIONARIO_REALIZADO WHERE CodigoGenerado = '$codCuest' LIMIT 1");

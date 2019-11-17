@@ -10,7 +10,6 @@ $time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
 //recuperando respuestas para enviar
 
 
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,44 +24,64 @@ $time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" >
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
-<script type="text/javascript">
-function guardarRespuesta(){
-        toastr.success("Se respuesta se a procesado forfavor espere","Aviso!");
-        $('#cbox1').attr("disabled", true);
-        $('#cbox2').attr("disabled", true);
-        $('#cbox3').attr("disabled", true);
-        $('#cbox4').attr("disabled", true);
-        return false;
-
-      }
-</script>
 <body>
+  <div class="container">
+    <h1> Seleccione su Respuesta</h1>
+    <a>
+      <img src="img/Cuadrado.png">
+      <label><input id="cbox1" type="radio" name="respuesta" value="1">Respuesta 1</label><br>
+    </a>
 
-		<div class="container">
-      <form  method="post">
-        <a>
-          <img src="img/Cuadrado.png">
-          <label><input type="checkbox" name="cbox11" id="cbox1" value="1"   onclick="guardarRespuesta();" > Este es mi primer checkbox</label><br>
-        </a>
+    <a>
+      <img src="img/Circulo.png">
+      <label><input id="cbox2" type="radio" name="respuesta" value="2">Respuesta 2</label><br>
+    </a>
 
-        <a>
-          <img src="img/Circulo.png">
-          <label><input type="checkbox" name="cbox22" id="cbox2" value="2"   onclick="guardarRespuesta();" > Este es mi segundo checkbox</label><br>
-        </a>
+    <a>
+      <img src="img/Triangulo.png">
+      <label><input id="cbox3" type="radio" name="respuesta" value="3">Respuesta 3</label><br>
+    </a>
+    <a>
+      <img src="img/Rombo.png">
+      <label><input id="cbox4" type="radio" name="respuesta" value="4">Respuesta 4</label><br>
+    </a>
 
-        <a>
-          <img src="img/Triangulo.png">
-          <label><input type="checkbox" name="cbox33" id="cbox3" value="3"   onclick="guardarRespuesta();" > Este es mi tercer checkbox</label><br>
-        </a>
-        <a>
-          <img src="img/Rombo.png">
-          <label><input type="checkbox" name="cbox44" id="cbox4" value="4"   onclick="guardarRespuesta();" > Este es mi cuarto checkbox</label><br>
-        </a>
+  </div>
 
-      </form>
-		</div>
+  <script>
+
+      $(document).ready(function() {
+          $('input[type="radio"]').click(function() {
+              var respuesta = $(this).val();
+              var nick = '<?php echo $nick; ?>' //por ser string
+              var idPreg = '<?php echo $idPreg; ?>'
+              var codCuest = '<?php echo $codCuest; ?>'
+              $.ajax({
+                  url: "guardarRespuesta.php",
+                  method: "POST",
+                  data: {
+                      respuesta: respuesta, nick: nick, idPreg: idPreg, codCuest: codCuest
+                  }
+                  //no necesito ninguno respuesta por eso elimino success
+                  //,
+                  //success: function(data) {
+                  //    $('#result').html(data);
+                  //}
+              });
+
+              //desactivando los demas radios despues de la primera respuesta
+              toastr.success("Su respuesta se a procesado forfavor espere mientras los demas responden...","Aviso!");
+              $('#cbox1').attr("disabled", true);
+              $('#cbox2').attr("disabled", true);
+              $('#cbox3').attr("disabled", true);
+              $('#cbox4').attr("disabled", true);
+          });
+      });
+  </script>
+
 		<script type="text/javascript">
 
     (function () {
@@ -84,9 +103,6 @@ function guardarRespuesta(){
   Redirigiendo en <span id="countdown"><?php echo floor($time_on);
   //redirigirndo a una vista despues de el tiempo time_on
   header("refresh:$time_on; url=../vistaEsperaPregunta.php?idCuest=$idCuest&idPreg=$idPreg");
-	//redirigir a otra pagina donde haya un boton que pase a la siguiente pregunta y muestre estadisticas
-  //cambiando estado de pregunta a usada que es 1
-  //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
 
   ?>
 
