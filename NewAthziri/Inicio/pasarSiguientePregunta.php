@@ -14,8 +14,26 @@ $numPreg = $_GET['numPreg'];
 //en este caso los clientes deben verificar si esta en 0 para empezar a correr tiempo
 $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCuestionario='$numCuest'");
 
+$consultaBuena = "SELECT COUNT(RESPUESTA_JUGADOR.Correcta) AS Buenas FROM RESPUESTA_JUGADOR
+WHERE RESPUESTA_JUGADOR.PREGUNTA_idPregunta='$numPreg' AND RESPUESTA_JUGADOR.CodigoCuestRealizado='$clave'
+AND RESPUESTA_JUGADOR.Correcta='1';";
+            $resultadoBuena = mysqli_query( $conexion, $consultaBuena ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+            while ($columnas = mysqli_fetch_array( $resultadoBuena))
+            {
+            	$buenas = $columnas['Buenas'];
+            }
+
+            $consultaMala = "SELECT COUNT(RESPUESTA_JUGADOR.Correcta) AS Malas FROM RESPUESTA_JUGADOR
+WHERE RESPUESTA_JUGADOR.PREGUNTA_idPregunta='$numPreg' AND RESPUESTA_JUGADOR.CodigoCuestRealizado='$clave'
+AND RESPUESTA_JUGADOR.Correcta='0';";
+            $resultadoMala = mysqli_query( $conexion, $consultaMala ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+            while ($columna = mysqli_fetch_array( $resultadoMala))
+            {
+            	$malas = $columna['Malas'];
+            }
 
  ?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -39,7 +57,7 @@ $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCu
               <span class="icon-bar"></span>
             </button>
 
-            <a href="index.php" class="navbar-brand"> <h4>Inicio || Athziri</h4> </a>
+            <a href="index.php" class="navbar-brand"> <h4>Inicio | Ahtziri</h4> </a>
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-1">
@@ -57,6 +75,42 @@ $guardar = mysqli_query($conexion,"UPDATE CUESTIONARIO SET Activo='1' WHERE idCu
 
     <body background="img/fondo 1.png">
       <div class="container">
+
+<h2>Estadisticas de los resultados:</h2>
+              <br>
+
+            	<script type="text/javascript">
+            	var buena  = '<?php echo $buenas; ?>';
+            	var mala  = '<?php echo $malas; ?>';
+            	//document.write(buena);
+            	window.onload = function () {
+
+            	var chart = new CanvasJS.Chart("chartContainer", {
+            		theme: "dark1", // "light2", "dark1", "dark2"
+            		animationEnabled: true, // change to true
+            		//title:{
+            			//text: "Tus resultados:"
+            		//},
+
+            		data: [
+            		{
+            			// Change type to "bar", "area", "spline", "pie",etc.
+            			type: "bar",
+            			dataPoints: [
+            				{ label: "Correctas",  y: parseInt(buena,10) },
+            				{ label: "Incorrectas", y: parseInt(mala,10)  },
+
+            			]
+            		}
+            		]
+            	});
+            	chart.render();
+            	}
+            	</script>
+
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+
         <?php
             //$guardar1 = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
             echo "<a href=\"verPreguntas.php?idCuest=$numCuest&nombreCuest=$nombreCuest&clave=$clave\">

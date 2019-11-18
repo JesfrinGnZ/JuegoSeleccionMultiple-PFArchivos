@@ -1,3 +1,10 @@
+<?php
+
+$codCuest = $_GET['codCuest'];
+$nick = $_GET['nick'];
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="es" class="no-js">
     <head>
@@ -22,23 +29,23 @@
 
             <?php
 
-            include("conexion.php");
+            include("../conexion.php");
             $consultaBuena = "SELECT COUNT(RESPUESTA_JUGADOR.Correcta) AS Buenas FROM RESPUESTA_JUGADOR
             INNER JOIN JUGADOR ON RESPUESTA_JUGADOR.Jugador_Id = JUGADOR.idJugador
-            WHERE RESPUESTA_JUGADOR.Correcta='1' AND JUGADOR.NickName='201531132' AND JUGADOR.CodigoCuestionario='5hsj079i';";
+            WHERE RESPUESTA_JUGADOR.Correcta='1' AND JUGADOR.NickName='$nick' AND JUGADOR.CodigoCuestionario='$codCuest';";
             $resultadoBuena = mysqli_query( $conexion, $consultaBuena ) or die ( "Algo ha ido mal en la consulta a la base de datos");
             while ($columna = mysqli_fetch_array( $resultadoBuena))
             {
-            	$buenas = $columna[0];
+            	$buenas = $columna['Buenas'];
             }
 
-            $consultaMala = "SELECT COUNT(RESPUESTA_JUGADOR.Correcta) AS Buenas FROM RESPUESTA_JUGADOR
+            $consultaMala = "SELECT COUNT(RESPUESTA_JUGADOR.Correcta) AS Malas FROM RESPUESTA_JUGADOR
             INNER JOIN JUGADOR ON RESPUESTA_JUGADOR.Jugador_Id = JUGADOR.idJugador
-            WHERE RESPUESTA_JUGADOR.Correcta='0' AND JUGADOR.NickName='201531132' AND JUGADOR.CodigoCuestionario='5hsj079i';";
+            WHERE RESPUESTA_JUGADOR.Correcta='0' AND JUGADOR.NickName='$nick' AND JUGADOR.CodigoCuestionario='$codCuest';";
             $resultadoMala = mysqli_query( $conexion, $consultaMala ) or die ( "Algo ha ido mal en la consulta a la base de datos");
             while ($columna = mysqli_fetch_array( $resultadoMala))
             {
-            	$malas = $columna[0];
+            	$malas = $columna['Malas'];
             }
 
             	?>
@@ -53,7 +60,7 @@
             	window.onload = function () {
 
             	var chart = new CanvasJS.Chart("chartContainer", {
-            		theme: "light1", // "light2", "dark1", "dark2"
+            		theme: "dark1", // "light2", "dark1", "dark2"
             		animationEnabled: false, // change to true
             		//title:{
             			//text: "Tus resultados:"
@@ -80,8 +87,8 @@
             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
 
 
-            <form action="validacionEntradas.php" method="POST">
-                <button  type="submit" name="login"> Descargar resultados </button>
+            <form action="exportarCsvJugador.php" method="POST">
+                <button  type="submit" name="login">Descargar resultados</button>
             </form>
             <a href="index.php" style="color:#FFFFFF;">
        			 <button type="submit">Finalizar</button>

@@ -29,7 +29,7 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a href="index.php" class="navbar-brand"> <h4>Inicio | Athziri</h4> </a>
+						<a href="index.php" class="navbar-brand"> <h4>Inicio | Ahtziri</h4> </a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="navbar-1">
@@ -43,6 +43,7 @@
 	</div>
 
   <div class="container">
+
     <?php
     include("../conexion.php");
     $id = 1;
@@ -52,7 +53,13 @@
     $result = mysqli_query($conexion,$sql);
     echo "
     <h2>Hola $usuarioLog!</h2>
-      <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table\">
+    <div class=\"panel panel-default\">
+    <div class=\"panel-heading\">
+        Lista de Cuestionarios
+        <a href=\"creacionDeCuestionarios/creacionDeCuestionario.php\" class=\"btn btn-success pull-right\">Crear cuestionario!</a>
+    </div>
+
+      <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table table-bordered\">
         <thead class=\"thead-light\">
         <tr>
           <th scope=\"col\"> Acciones </th>
@@ -65,7 +72,7 @@
       echo "
         <tbody>
         <tr>
-          <td><a href=\"esperandoConexion.php?idCuest=$row[0]&nombreCuest=$row[1]\">Activar</a>
+          <td><a href=\"esperandoConexion.php?idCuest=$row[0]&nombreCuest=$row[1]\"><button type=\"submit\" class=\"btn btn-primary\">Activar</button></a>
           <td>".$row[0]."</td>
           <td>".$row[1]."</td>
           <td>".$row[2]."</td>
@@ -73,18 +80,10 @@
         </tr>
         </tbody>";
     }
-    echo "</table>";
+    echo "</table>
+          </div>";
      ?>
-     <!--Botones-->
-     <div class="container-fluid">
-       <section class="main row">
-         <div class="btn-group">
-           <a href="creacionDeCuestionarios/creacionDeCuestionario.php">
-             <button type="submit" class="btn btn-danger">Crear</button>
-           </a>
-         </div>
-       </section>
-     </div>
+     
   </div>
 
 
