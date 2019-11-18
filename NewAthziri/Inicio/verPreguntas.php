@@ -48,10 +48,12 @@
 <head>
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styleInicio.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title> Preguntas </title>
 </head>
 <body background="img/fondo 1.png">
@@ -107,17 +109,20 @@
      })();
 
   </script>
-  Redirigiendo en <span id="countdown"><?php echo floor($time_on);
-  //redirigirndo a una vista despues de el tiempo time_on
-  //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
-  header( "refresh:$time_on; url=leerRespuestas.php?idCuest=$numCuest&nomCuest=$nombreCuest&idPregunta=$idTemporal&tiempoPreg=$tiempoPreg&clave=$clave");
+  <div class="tex-center">
+    <h3>  Segundos para continuar <span id="countdown"><?php echo floor($time_on);
+      //redirigirndo a una vista despues de el tiempo time_on
+      //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
+      header( "refresh:$time_on; url=leerRespuestas.php?idCuest=$numCuest&nomCuest=$nombreCuest&idPregunta=$idTemporal&tiempoPreg=$tiempoPreg&clave=$clave");
 
-  //cambiandomestado de pregunta a usada que es 1
-  //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
+      //cambiandomestado de pregunta a usada que es 1
+      //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$idTemporal'");
 
-  ?>
+      ?></h3>
+  </div>
 
-  </span> seconds.<br><br>
+
+  </span> <br><br>
 
 
   </div>

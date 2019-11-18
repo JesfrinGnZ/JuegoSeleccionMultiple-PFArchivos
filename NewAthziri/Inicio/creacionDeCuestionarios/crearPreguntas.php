@@ -105,31 +105,31 @@ include("inicioCreacionDePreguntas.php");
                               <label for="nombre">
                                 <h4><span class="label label-primary">Pregunta*</span></h4>
                                 </label>
-                              <input class="form-control" id="pregunta" name="pregunta" type="text" placeholder="Ingrese pregunta"></input>
+                              <input class="form-control" id="pregunta" name="pregunta" type="text" placeholder="Ingrese pregunta" autocomplete="off" ></input>
                           </div>
                           <div class="form-group">
                               <label for="edad">
                                 <h4><span class="label label-success">Respuesta1*</span></h4>
                               </label>
-                              <input class="form-control" id="r1" name="r1" type="text" placeholder="Ingrese respuesta"></input>
+                              <input class="form-control" id="r1" name="r1" type="text" placeholder="Ingrese respuesta" autocomplete="off" ></input>
                           </div>
                           <div class="form-group">
                               <label for="edad">
                                 <h4> <span class="label label-warning">Respuesta2*</span></h4>
                               </label>
-                              <input class="form-control" id="r2" name="r2" type="text" placeholder="Ingrese respuesta"></input>
+                              <input class="form-control" id="r2" name="r2" type="text" placeholder="Ingrese respuesta" autocomplete="off" ></input>
                           </div>
                           <div class="form-group">
                               <label for="edad">
                                 <h4><span class="label label-danger">Respuesta3*</span></h4>
                               </label>
-                              <input class="form-control" id="r3" name="r3" type="text" placeholder="Ingrese respuesta"></input>
+                              <input class="form-control" id="r3" name="r3" type="text" placeholder="Ingrese respuesta" autocomplete="off"></input>
                           </div>
                           <div class="form-group">
                               <label for="edad">
                                 <h4><span class="label label-info">Respuesta4*</span></h4>
                               </label>
-                              <input class="form-control" id="r4" name="r4" type="text" placeholder="Ingrese respuesta"></input>
+                              <input class="form-control" id="r4" name="r4" type="text" placeholder="Ingrese respuesta" autocomplete="off"></input>
                           </div><br>
 
                           <h4><label for="">Escoja las respuestas correctas</label><br></h4>

@@ -50,11 +50,11 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
         <form action="crearPreguntas.php" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre de cuestionario</label>
-            <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
+            <input type="text" name="nombreC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Descripcion</label>
-            <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" required>
+            <input type="text" name="descripcionC" class="form-control" id="exampleInputPassword1" placeholder="Descripcion" autocomplete="off" required>
           </div>
           <input type="submit" name="" value="Crear">
         </form>
