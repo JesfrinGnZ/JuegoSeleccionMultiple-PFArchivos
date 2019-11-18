@@ -36,32 +36,33 @@ if ($pregunta->num_rows>0) {
 }
 
  ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" href="css/styleInicio.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
-	<title>Ahtziri | Leer Pregunta</title>
-  <style type="text/css">
-      .content {
-        width:600px;
-        height:400px;
-        margin:0px auto;
-        text-align:center;
-        background-color:#ffffff;
-      }
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title></title>
+     <script
+     src="https://code.jquery.com/jquery-3.4.1.js"
+     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+     crossorigin="anonymous"></script>
+     <style type="text/css">
 
-      .content img {
-        vertical-align:middle;
-        horizontal-align:middle;
-      }
-  </style>
-</head>
-<body>
+     .content {
+     	width:600px;
+     	height:400px;
+     	margin:0px auto;
+     	text-align:center;
+     	background-color:#ffffff;
+     }
+
+     .content img {
+     	vertical-align:middle;
+       horizontal-align:middle;
+     }
+
+     </style>
+   </head>
+   <body>
   <div class="content">
     <img src="../NewAthziri/Imagenes/cargando.gif" width="550" height="200" />
     <img src="../NewAthziri/Imagenes/EsperaunMomento.png" width="580" height="150" />
@@ -85,7 +86,7 @@ if ($pregunta->num_rows>0) {
      })();
 
   </script>
-  <div class="text-center"><br>
+  <div class="content"><br>
     <h2> Segundos para continuar <span id="countdown"><?php echo floor($time_on);
     //redirigirndo a una vista despues de el tiempo time_on
      header( "refresh:$time_on; url=Inicio/responderPregunta.php?idCuest=$idCuest&codCuest=$codCuest&nick=$nick&idPreg=$idTemporalPreg&tiempoPreg=$tiempoPreg");
