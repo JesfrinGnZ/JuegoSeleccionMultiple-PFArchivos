@@ -44,11 +44,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styleInicio.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/styleInicio.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
 	<title>Ahtziri | Responde</title>
 </head>
 <body background="img/fondo 1.png">
@@ -61,16 +60,16 @@
 
 		  <tbody>
 		  <tr>
-		    <td><img src="img/Cuadrado.png"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
+		    <td><img src="img/Cuadrado.jpg"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
 		<?php echo "".$r1["Descripcion"]; ?></FONT></td>
-		    <td><img src="img/Circulo.png"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
+		    <td><img src="img/Circulo.jpg"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
 		 <?php echo "".$r2["Descripcion"]; ?></FONT></td>
 		    <br>
 		  </tr>
 		  <tr>
-		    <td><img src="img/Triangulo.png"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
+		    <td><img src="img/Triangulo.jpg"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
 		 <?php echo "".$r3["Descripcion"]; ?></FONT></td>
-		    <td><img src="img/Rombo.png"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
+		    <td><img src="img/Rombo.jpg"><FONT FACE="impact" SIZE=6 COLOR="black"><br>
 		 <?php echo "".$r4["Descripcion"]; ?></FONT></td>
 		    <br>
 		  </tr>
@@ -97,16 +96,21 @@
      })();
 
   </script>
-  Redirigiendo en <span id="countdown"><?php echo floor($time_on);
-  //redirigirndo a una vista despues de el tiempo time_on
-  //**esto sigue dando clavos aqui.
-  //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
-  header( "refresh:$time_on; url=pasarSiguientePregunta.php?idCuest=$numCuest&nombreCuest=$nomCuest&clave=$clave&numPreg=$numPreg");
-	//redirigir a otra pagina donde haya un boton que pase a la siguiente pregunta y muestre estadisticas
-  //cambiando estado de pregunta a usada que es 1
-  //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
+  <div class="text-center">
+    <h2>
+      Segundos para continuar <span id="countdown"><?php echo floor($time_on);
+      //redirigirndo a una vista despues de el tiempo time_on
+      //**esto sigue dando clavos aqui.
+      //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
+      header( "refresh:$time_on; url=pasarSiguientePregunta.php?idCuest=$numCuest&nombreCuest=$nomCuest&clave=$clave&numPreg=$numPreg");
+    	//redirigir a otra pagina donde haya un boton que pase a la siguiente pregunta y muestre estadisticas
+      //cambiando estado de pregunta a usada que es 1
+      //$guardar = mysqli_query($conexion,"UPDATE PREGUNTA SET Estado='1' WHERE idPregunta='$numPreg'");
 
-  ?>
+      ?>
+    </h2>
+  </div>
+
 
 	<script src="js/jquery.js"> </script>
 	<script src="js/bootstrap.min.js"> </script>

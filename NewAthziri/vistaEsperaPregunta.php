@@ -81,6 +81,13 @@
       horizontal-align:middle;
     }
 
+    h1 {
+  color: #ff6000;
+  font-weight: normal;
+  font-size: 40px;
+  font-family: Arial;
+}
+
   </style>
   </head>
   <body style="background-color:#FFFFFF;">
@@ -101,7 +108,6 @@
       echo "<div class=\"page-container\">
         <img src=\"../NewAthziri/Imagenes/respuestaCorrecta.png\" style=\"width:30%; height:30%;\">
         <br>
-        <h1>La Respuesta Correcta es: $mostrarResp</h1>
       </div>";
 
     }

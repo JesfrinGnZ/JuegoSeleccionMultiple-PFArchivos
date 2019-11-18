@@ -6,7 +6,7 @@ $idCuest = $_GET['idCuest'];
 $codCuest = $_GET['codCuest'];
 $nick = $_GET['nick'];
 $idPreg = $_GET['idPreg'];
-$time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
+$time_on = $_GET['tiempoPreg'] + 1; //mas uno por atraso del admin
 //recuperando respuestas para enviar
 
 
@@ -31,21 +31,21 @@ $time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
   <div class="container">
     <h1> Seleccione su Respuesta</h1>
     <a>
-      <img src="img/Cuadrado.png">
+      <img src="img/Cuadrado.jpg">
       <label><input id="cbox1" type="radio" name="respuesta" value="1">Respuesta 1</label><br>
     </a>
 
     <a>
-      <img src="img/Circulo.png">
+      <img src="img/Circulo.jpg">
       <label><input id="cbox2" type="radio" name="respuesta" value="2">Respuesta 2</label><br>
     </a>
 
     <a>
-      <img src="img/Triangulo.png">
+      <img src="img/Triangulo.jpg">
       <label><input id="cbox3" type="radio" name="respuesta" value="3">Respuesta 3</label><br>
     </a>
     <a>
-      <img src="img/Rombo.png">
+      <img src="img/Rombo.jpg">
       <label><input id="cbox4" type="radio" name="respuesta" value="4">Respuesta 4</label><br>
     </a>
 
@@ -73,7 +73,7 @@ $time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
               });
 
               //desactivando los demas radios despues de la primera respuesta
-              toastr.success("Su respuesta se a procesado forfavor espere mientras los demas responden...","Aviso!");
+              toastr.success("Su respuesta se ha registrado. Por favor espere mientras los demas responden...","Aviso!");
               $('#cbox1').attr("disabled", true);
               $('#cbox2').attr("disabled", true);
               $('#cbox3').attr("disabled", true);
@@ -100,11 +100,13 @@ $time_on = $_GET['tiempoPreg'] + 2; //mas uno por atraso del admin
      })();
 
   </script>
-  Redirigiendo en <span id="countdown"><?php echo floor($time_on);
-  //redirigirndo a una vista despues de el tiempo time_on
-  header("refresh:$time_on; url=../vistaEsperaPregunta.php?idCuest=$idCuest&idPreg=$idPreg");
-
-  ?>
+  <div class="tex-center"><br>
+    <h3>Segundos para continuar  <span id="countdown"><?php echo floor($time_on);
+      //redirigirndo a una vista despues de el tiempo time_on
+      header("refresh:$time_on; url=../vistaEsperaPregunta.php?idCuest=$idCuest&idPreg=$idPreg");
+      ?>
+    </h3>
+  </div>
 
 	<script src="js/jquery.js"> </script>
 	<script src="js/bootstrap.min.js"> </script>
