@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a href="index.php" class="navbar-brand"> <h4>Inicio || Athziri</h4> </a>
+            <a href="index.php" class="navbar-brand"> <h4>Inicio | Athziri</h4> </a>
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-1">
@@ -40,6 +40,18 @@
     <body background="img/fondo 1.png">
       <div class="container">
       <h2>SE TERMINO EL CUESTIONARIO PARA EL JUGADOR</h2>
+      </div>
+
+      <div class="container">
+        <?php
+          echo "<h2>El Cuestionario: $nombreCuest a sido finalizado</h2>";
+
+          echo "<a href=\"exportarCsv.php?clave=$clave\">
+                  <button type=\"submit\" class=\"btn btn-danger\">Exportar Csv</button>
+                </a>";
+         ?>
+
+
       </div>
 
       <footer>

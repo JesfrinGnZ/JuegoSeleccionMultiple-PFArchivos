@@ -87,7 +87,7 @@
   <div class="container">
     <?php
       echo "<h2>Respondiendo Cuestionario: $nombreCuest</h2>
-          <h2>$descripcionPreg ??</h2>";
+          <h2>$descripcionPreg</h2>";
 
 
     ?>

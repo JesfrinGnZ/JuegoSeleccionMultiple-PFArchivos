@@ -61,6 +61,6 @@ if ($resp == 1) {
 }
 
 //guardando respuesta jugador
-$guardar = mysqli_query($conexion,"INSERT INTO RESPUESTA_JUGADOR VALUES (null,'$correcta','$idJugador','$idPreg')");
+$guardar = mysqli_query($conexion,"INSERT INTO RESPUESTA_JUGADOR VALUES (null,'$correcta','$idJugador','$idPreg','$codCuest')");
 
 ?>

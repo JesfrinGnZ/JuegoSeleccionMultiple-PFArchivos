@@ -1,5 +1,5 @@
 <?php
-	if(!$conexion = mysqli_connect("localhost","root","7321","Cuestionarios"))
+	if(!$conexion = mysqli_connect("localhost","root","3211","Cuestionarios"))
 
 	{
 		echo "<script>alert('No se Completo la solicitud por fallos de configuracion...'); </script>".

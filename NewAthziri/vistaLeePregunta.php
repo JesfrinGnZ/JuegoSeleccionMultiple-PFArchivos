@@ -32,7 +32,7 @@ if ($pregunta->num_rows>0) {
   }
 } else {
     //cuestionario finalizado porque ya no hay ninguna pregunta con estado no respondida
-    header("Location:Inicio/cuestionarioTerminadoJugador.php");
+    header("Location:Inicio/cuestionarioFinalizadoJugador.php?codCuest=$codCuest&nick=$nick");
 }
 
  ?>
