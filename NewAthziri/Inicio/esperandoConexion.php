@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/styleInicio.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
-    <title> Espera de Conectados</title>
+    <title>Esperando Conectados</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <style type="text/css">
 
     .content {
-    	width:600px;
-    	height:400px;
-    	margin:0px auto;
-    	text-align:center;
-    	background-color:#ffffff;
+     width:600px;
+     height:400px;
+     margin:0px auto;
+     text-align:center;
+     background-color:#ffffff;
     }
 
     .content img {
-    	vertical-align:middle;
+     vertical-align:middle;
       horizontal-align:middle;
     }
 
-
-</style>
-<script
-src="https://code.jquery.com/jquery-3.4.1.js"
-integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-crossorigin="anonymous">
-</script>
+    </style>
   </head>
   <body>
 
@@ -95,6 +93,7 @@ crossorigin="anonymous">
       </script>
 
     </div>
-
+    <script src="js/jquery.js"> </script>
+  	<script src="js/bootstrap.min.js"> </script>
   </body>
 </html>
