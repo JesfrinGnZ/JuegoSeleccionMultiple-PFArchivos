@@ -2,7 +2,7 @@
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Ahtziri | LogIn</title>
+        <title>Ahtziri | Fin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -13,32 +13,20 @@
         <link rel="stylesheet" href="assets/css/supersized.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
     </head>
     <body>
         <div class="page-container">
 		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
-            <h1>LogIn</h1>
-            <form action="login.php" method="post">
-                <input type="text" name="user" class="username" autocomplete="off" placeholder="Nombre de Usuario">
-                <input type="password" name="pass" class="password" autocomplete="off" placeholder="Contraseña">
-                <button type="submit" name="login"> Iniciar Sesion </button>
-            </form>
-            <div class="container">
-              <a href="Registro.php" style="color:#FFFFFF;">
-         			 <button type="submit">Registrate</button>
-         		  </a>
-            </div>
-            <div class="container">
-              <a href="index.php" style="color:#FFFFFF;">
-         			 <button type="submit">Regresar</button>
-         		 </a>
-            </div>
+            <h1>¡Se ha finalizado el cuestionario!</h1>
+            <br>
 
+            <form action="validacionEntradas.php" method="POST">
+                <button  type="submit" name="login"> Descargar resultados </button>
+            </form>
+            <a href="index.php" style="color:#FFFFFF;">
+       			 <button type="submit">Finalizar</button>
+       		 </a>
+           <br>
         </div>
 
         <!-- Javascript -->

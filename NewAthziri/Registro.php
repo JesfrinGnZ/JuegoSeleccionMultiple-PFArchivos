@@ -25,9 +25,9 @@
 		      <img class="logo" src="../NewAthziri/Imagenes/Logo.png" style="width:30%; height:30%;">
             <h1> Registro </h1>
             <form action="datos.php" method="post">
-                <input type="text" name="U" class="username" placeholder="Nombre de Usuario" required/>
-                <input type="text" name="N" class="email" placeholder="Nombre Completo" required/>
-                <input type="password" name="P" class="password" placeholder="Contraseña" required/>
+                <input type="text" name="U" class="username" autocomplete="off" placeholder="Nombre de Usuario" required/>
+                <input type="text" name="N" class="email" autocomplete="off" placeholder="Nombre Completo" required/>
+                <input type="password" name="P" class="password" autocomplete="off" placeholder="Contraseña" required/>
                 <button type="submit"> Registrar </button>
             </form>
             <a href="index.php" style="color:#FFFFFF;">
