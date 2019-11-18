@@ -24,8 +24,9 @@
 		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
             <h1>LogIn</h1>
             <form action="login.php" method="post">
-                <input type="text" name="user" class="username" autocomplete="off" placeholder="Nombre de Usuario">
-                <input type="password" name="pass" class="password" autocomplete="off" placeholder="Contraseña">
+                <input type="text" name="user" class="username" placeholder="Nombre de Usuario" required>
+                <input type="password" name="pass" class="password" placeholder="Contraseña" required>
+
                 <button type="submit" name="login"> Iniciar Sesion </button>
             </form>
             <div class="container">
