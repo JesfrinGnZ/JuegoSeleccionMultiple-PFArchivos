@@ -32,7 +32,7 @@ session_start();  if (!isset($_SESSION["logueado"])){ header("Location:../index.
             <ul class="nav navbar-nav navbar-right">
 
               <li>
-                <a href="../salir.php"><h5>Cancelar</h5></a>
+                <a href="../index.php"><h5>Cancelar</h5></a>
               </li>
               <li>
                 <a href="../salir.php"><h5>Cerrar Sesion</h5></a>

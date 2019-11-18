@@ -27,7 +27,7 @@
           <div class="collapse navbar-collapse" id="navbar-1">
             <ul class="nav navbar-nav navbar-right">
               <li>
-                
+
               </li>
             </ul>
 
