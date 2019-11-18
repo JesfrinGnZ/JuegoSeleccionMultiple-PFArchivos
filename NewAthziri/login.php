@@ -21,30 +21,46 @@
 
 ?>
 
-<!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="utf-8">
-     <title>Datos Incorrectos</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
-   </head>
-   <body style="background-color:white;">
-     <div class="container">
-       <div class="row">
-         <div class="col-md-6 col-md-offset-3">
-           <div class="panel panel-danger">
-             <div class="panel-heading"><span class="glyphicon glyphicon-warning-sign" ></span> Datos incorrectos</div>
-             <div class="panel-body">
-               La información ingresada no es correcta, por favor verifique los datos puede
-               ser que tenga activa la tecla de Mayúsculas o bien que haya digitado un dato mal.
+ <!DOCTYPE html>
+ <html lang="es" class="no-js">
+     <head>
+         <meta charset="utf-8">
+         <title>Ahtziri | Error</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="description" content="">
+         <meta name="author" content="">
+
+         <!-- CSS -->
+         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+         <link rel="stylesheet" href="assets/css/reset.css">
+         <link rel="stylesheet" href="assets/css/supersized.css">
+         <link rel="stylesheet" href="assets/css/style.css">
+
+         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+         <!--[if lt IE 9]>
+             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+         <![endif]-->
+
+     </head>
+     <body>
+         <div class="page-container">
+ 		      <img class="logo" src="../NewAthziri/Imagenes/Error.png" style="width:25%; height:25%;">
+             <h1>Error de Credenciales</h1>
+						 <div class="panel panel-default">
+               ¡La información ingresada no es correcta! Por favor verifica tus datos, es posible
+               que tengas activada la tecla de Mayúsculas o bien que haya ingresado datos erroneos.
              </div>
-             <div class="panel-footer">
-               <a href="admins.php" class="btn btn-danger">Regresar</a>
-             </div>
-           </div>
+             <a href="admins.php" style="color:#FFFFFF;">
+        			 <button type="submit">Regresar</button>
+        		 </a>
          </div>
-       </div>
-       </div>
-   </body>
+
+         <!-- Javascript -->
+         <script src="assets/js/jquery-1.8.2.min.js"></script>
+         <script src="assets/js/supersized.3.2.7.min.js"></script>
+         <script src="assets/js/supersized-init0.js"></script>
+         <script src="assets/js/scripts.js"></script>
+
+     </body>
+
  </html>

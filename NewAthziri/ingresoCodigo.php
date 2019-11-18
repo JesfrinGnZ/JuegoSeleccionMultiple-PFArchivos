@@ -24,8 +24,8 @@
 		        <img class="logo" src="../NewAthziri/Imagenes/Logo.png"/ style="width:30%; height:30%;">
             <h1>¡Jugar ahora!</h1>
             <form action="vistaEsperaJugador.php" method="POST">
-                <input type="text" name="codigoCuestionario" class="code" placeholder="Codigo de Cuestionario" required/>
-                <input type="text" name="nickname" class="username" placeholder="Tu Nickname" required/>
+                <input type="text" name="codigoCuestionario" class="code" autocomplete="off" placeholder="Codigo de Cuestionario" required/>
+                <input type="text" name="nickname" class="username" autocomplete="off" placeholder="Tu Nickname" required/>
                 <button  type="submit" name="login"> Ingresar </button>
             </form>
             <a href="index.php" style="color:#FFFFFF;">
