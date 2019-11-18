@@ -82,8 +82,41 @@
     }
     echo "</table>
           </div>";
+
+          $sql2 = "SELECT CUESTIONARIO_REALIZADO.CodigoGenerado, CUESTIONARIO.Nombre FROM CUESTIONARIO
+          INNER JOIN ADMINISTRADOR ON CUESTIONARIO.Admin_User = ADMINISTRADOR.User
+          INNER JOIN CUESTIONARIO_REALIZADO ON CUESTIONARIO_REALIZADO.Cuestionario_Id = CUESTIONARIO.idCuestionario
+          WHERE ADMINISTRADOR.User='$usuarioLog';";
+          $result2 = mysqli_query($conexion,$sql2);
+          echo "
+          <div class=\"panel panel-default\">
+          <div class=\"panel-heading\">
+              Lista de Cuestionarios Jugados
+          </div>
+
+            <table border = 2 cellspacing = 2 cellpadding = 2 class=\"table table-bordered\">
+              <thead class=\"thead-light\">
+              <tr>
+                <th scope=\"col\"> Descargar </th>
+                <th scope=\"col\"> Codigo de Juego </th>
+                <th scope=\"col\"> Nombre de Cuestionaio </th>
+              </tr>
+              </thead>";
+          while($row2 = mysqli_fetch_array($result2)){
+            echo "
+              <tbody>
+              <tr>
+                <td><a href=\"exportarCsv.php?clave=$row2[0]\"><button type=\"submit\" class=\"btn btn-primary\">Descargar Resultados</button></a>
+                <td>".$row2[0]."</td>
+                <td>".$row2[1]."</td>
+                <br>
+              </tr>
+              </tbody>";
+          }
+          echo "</table>
+                </div>";
      ?>
-     
+
   </div>
 
 
